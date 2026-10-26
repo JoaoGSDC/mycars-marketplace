@@ -130,7 +130,7 @@ export function CreateListingFromVehicleView({
             {preview ? (
               // eslint-disable-next-line @next/next/no-img-element
               <img
-                src={preview.url || preview.cardUrl}
+                src={preview.url || preview.cardUrl || undefined}
                 alt={preview.alt ?? ''}
                 className={styles.listings__mediaHeroImg}
               />

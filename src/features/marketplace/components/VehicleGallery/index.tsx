@@ -72,14 +72,16 @@ export function VehicleGallery({ images, alt, emptyLabel }: VehicleGalleryProps)
     }
   }, [lightboxOpen, resetTransform]);
 
-  function distance(a: Touch, b: Touch) {
+  type TouchPoint = Pick<React.Touch, 'clientX' | 'clientY'>;
+
+  function distance(a: TouchPoint, b: TouchPoint) {
     const dx = a.clientX - b.clientX;
     const dy = a.clientY - b.clientY;
 
     return Math.hypot(dx, dy);
   }
 
-  function midpoint(a: Touch, b: Touch) {
+  function midpoint(a: TouchPoint, b: TouchPoint) {
     return {
       x: (a.clientX + b.clientX) / 2,
       y: (a.clientY + b.clientY) / 2,

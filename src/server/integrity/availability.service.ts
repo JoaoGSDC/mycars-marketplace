@@ -470,11 +470,6 @@ export async function enforceAvailabilityHolds(options: {
       continue;
     }
 
-    if (listing.status === LISTING_STATUS.SUSPENDED) {
-      skipped += 1;
-      continue;
-    }
-
     await getDb()
       .update(listings)
       .set({

@@ -3,18 +3,37 @@ import { dirname, join, resolve } from 'node:path';
 
 import type { ObjectStorageProvider, PutObjectInput, PutObjectResult } from './types';
 
+/**
+ * Resolve a pasta raiz do storage local.
+ * Default: segmentos literais (Turbopack exige escopo estático).
+ * Paths customizados (testes): turbopackIgnore.
+ */
+function resolveLocalRoot(rootDir: string): string {
+  const normalized = rootDir.replace(/\\/g, '/').replace(/\/+$/, '');
+
+  if (!normalized || normalized === '.data/media') {
+    return join(process.cwd(), '.data', 'media');
+  }
+
+  return resolve(/*turbopackIgnore: true*/ process.cwd(), rootDir);
+}
+
+function absoluteUnderRoot(root: string, key: string): string {
+  return join(/*turbopackIgnore: true*/ root, key);
+}
+
 export function createLocalStorageProvider(options: {
   rootDir: string;
   publicBaseUrl: string;
 }): ObjectStorageProvider {
-  const root = resolve(process.cwd(), options.rootDir);
+  const root = resolveLocalRoot(options.rootDir);
   const base = options.publicBaseUrl.replace(/\/+$/, '');
 
   return {
     driver: 'local',
 
     async putObject(input: PutObjectInput): Promise<PutObjectResult> {
-      const absolute = join(root, input.key);
+      const absolute = absoluteUnderRoot(root, input.key);
       await mkdir(dirname(absolute), { recursive: true });
       await writeFile(absolute, input.body);
 
@@ -22,7 +41,7 @@ export function createLocalStorageProvider(options: {
     },
 
     async deleteObject(key: string): Promise<void> {
-      const absolute = join(root, key);
+      const absolute = absoluteUnderRoot(root, key);
 
       try {
         await unlink(absolute);
@@ -46,8 +65,8 @@ export function createLocalStorageProvider(options: {
 }
 
 export function resolveLocalMediaAbsolutePath(rootDir: string, key: string): string | null {
-  const root = resolve(process.cwd(), rootDir);
-  const absolute = resolve(root, key);
+  const root = resolveLocalRoot(rootDir);
+  const absolute = resolve(/*turbopackIgnore: true*/ root, key);
 
   if (!absolute.startsWith(root)) {
     return null;
