@@ -3,6 +3,8 @@
  *
  * - `USE_LOCAL_DB=true`  → SQLite local (`LOCAL_DATABASE_URL` ou `file:./.data/local.db`)
  * - `USE_LOCAL_DB=false` → Turso (`TURSO_DATABASE_URL` + `TURSO_AUTH_TOKEN`)
+ *
+ * Em Vercel / `NODE_ENV=production`, SQLite local é **sempre** ignorado (não existe disco persistente).
  */
 
 const DEFAULT_LOCAL_URL = 'file:./.data/local.db';
@@ -14,7 +16,15 @@ export type DatabaseCredentials = {
   isLocal: boolean;
 };
 
+function isHostedProduction(): boolean {
+  return process.env.VERCEL === '1' || process.env.NODE_ENV === 'production';
+}
+
 export function isUseLocalDbEnabled(): boolean {
+  if (isHostedProduction()) {
+    return false;
+  }
+
   return process.env.USE_LOCAL_DB === 'true';
 }
 
@@ -27,19 +37,21 @@ export function resolveDatabaseCredentials(): DatabaseCredentials {
 
   const tursoUrl = process.env.TURSO_DATABASE_URL?.trim();
 
-  if (!tursoUrl) {
+  if (!tursoUrl || tursoUrl.startsWith('file:')) {
     throw new Error(
-      'USE_LOCAL_DB=false exige TURSO_DATABASE_URL. Defina USE_LOCAL_DB=true para o SQLite local ou configure o Turso.'
-    );
-  }
-
-  if (tursoUrl.startsWith('file:')) {
-    throw new Error(
-      'USE_LOCAL_DB=false, mas TURSO_DATABASE_URL aponta para um arquivo local. Use a URL libsql:// do Turso ou USE_LOCAL_DB=true.'
+      [
+        'Banco remoto (Turso) obrigatório neste ambiente.',
+        'Na Vercel, defina USE_LOCAL_DB=false, TURSO_DATABASE_URL=libsql://… e TURSO_AUTH_TOKEN.',
+        'Localmente use USE_LOCAL_DB=true no .env.local.',
+      ].join(' ')
     );
   }
 
   const authToken = process.env.TURSO_AUTH_TOKEN?.trim() || undefined;
+
+  if (!authToken && isHostedProduction()) {
+    throw new Error('TURSO_AUTH_TOKEN é obrigatório em produção/Vercel.');
+  }
 
   return { url: tursoUrl, authToken, isLocal: false };
 }

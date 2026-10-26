@@ -18,7 +18,7 @@ Ver `.env.example`. Obrigatórias em produção:
 
 | Variável | Uso |
 | -------- | --- |
-| `USE_LOCAL_DB` | `true` = SQLite local; `false` = Turso |
+| `USE_LOCAL_DB` | `true` = SQLite local (dev); `false` = Turso. Em Vercel/prod o local é ignorado |
 | `LOCAL_DATABASE_URL` | arquivo local (default `file:./.data/local.db`) |
 | `TURSO_DATABASE_URL` | libSQL remoto (quando `USE_LOCAL_DB=false`) |
 | `TURSO_AUTH_TOKEN` | token Turso |
