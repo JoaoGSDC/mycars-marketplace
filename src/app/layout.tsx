@@ -1,13 +1,30 @@
 import type { Metadata, Viewport } from 'next';
-import { Hanken_Grotesk } from 'next/font/google';
+import localFont from 'next/font/local';
+
 import { brand } from '@config/brand';
 import '@/styles/index.css';
 
-const hankenGrotesk = Hanken_Grotesk({
+/**
+ * Fonte embutida no repo (next/font/local).
+ * Evita falha intermitente do next/font/google com URLs /l/font?kit=… no build Turbopack/Vercel.
+ * @see https://github.com/vercel/next.js/issues/99114
+ */
+const hankenGrotesk = localFont({
+  src: [
+    {
+      path: './fonts/HankenGrotesk-latin.woff2',
+      weight: '100 900',
+      style: 'normal',
+    },
+    {
+      path: './fonts/HankenGrotesk-latin-ext.woff2',
+      weight: '100 900',
+      style: 'normal',
+    },
+  ],
   variable: '--font-hanken-grotesk',
-  subsets: ['latin'],
   display: 'swap',
-  weight: ['400', '500', '600', '700', '800', '900'],
+  fallback: ['ui-sans-serif', 'system-ui', 'sans-serif'],
 });
 
 export const metadata: Metadata = {
