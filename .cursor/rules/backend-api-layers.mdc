@@ -1,0 +1,46 @@
+---
+description: Backend — routes, controllers, services e repositories
+globs: src/app/api/**/*.ts,src/api/**/*.ts,src/server/**/*.ts
+alwaysApply: false
+---
+
+# Backend — camadas
+
+## route.ts (fina)
+
+- Só wiring: import controller + `withParam` / `withParams` de `@api/shared/create-route`.
+- **Sem** lógica de negócio, Zod ou SQL.
+
+```ts
+import { withParam } from "@api/shared/create-route";
+export const GET = withParam("id", getItemController);
+```
+
+Next.js 15: params via helpers (`withParam`), não `await context.params` inline.
+
+## controller.ts
+
+- Parse body/query; chamar **`*Service`**.
+- Respostas: `jsonSuccess`, `jsonError`, `handleRouteError` (`@api/shared/api-response`).
+- Resultados de service: `ServiceResult` → mapear com `serviceError`/`serviceSuccess` ou helper `mapResult`.
+- **Não** importar `@server/repositories/*` em domínios padronizados.
+
+## service.ts
+
+- Validação Zod (`*.validators.ts`), orquestração, regras de negócio.
+- Retorno: `ServiceResult<T>` de `@server/shared/service-result`.
+- **Sem** `NextRequest`, `NextResponse`, JSX.
+- **Não** reexportar funções do repository no barrel do service.
+
+## repository.ts
+
+- Apenas Drizzle/SQL e mapeamento de rows → DTOs.
+- Sem validação HTTP ou feature flags complexas (ficam no service).
+
+## Novo endpoint (ordem)
+
+1. repository (se precisar persistência)
+2. service (validação + use case)
+3. controller (auth + HTTP)
+4. route.ts
+5. `ENDPOINTS` + entity em `shared/services`

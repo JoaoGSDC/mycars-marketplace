@@ -1,0 +1,85 @@
+@reference "../../styles/index.css";
+
+.crm {
+  @apply flex flex-col gap-6;
+}
+
+.crm__meta {
+  @apply text-xs text-text-muted;
+}
+
+.crm__overdue {
+  @apply text-xs font-medium text-error-fg;
+}
+
+.crm__kanban {
+  @apply grid gap-3 overflow-x-auto pb-2 md:grid-cols-3 xl:grid-cols-5;
+}
+
+.crm__kanbanColumn {
+  @apply flex min-w-[220px] flex-col gap-2 rounded-md border border-border bg-surface-sunken p-2;
+}
+
+.crm__kanbanTitle {
+  @apply flex items-center justify-between gap-2 px-1 py-1 text-xs font-semibold uppercase tracking-wide text-text-subtle;
+}
+
+.crm__kanbanCount {
+  @apply rounded-full bg-surface px-2 py-0.5 text-[11px] tabular-nums text-text;
+}
+
+.crm__kanbanCard {
+  @apply block rounded-md border border-border bg-surface p-3 text-left transition-colors hover:border-accent-strong;
+}
+
+.crm__kanbanCardTitle {
+  @apply text-sm font-medium text-text;
+}
+
+.crm__detail {
+  @apply grid gap-6 lg:grid-cols-[1fr_320px];
+}
+
+.crm__panel {
+  @apply flex flex-col gap-4 rounded-md border border-border bg-surface p-4;
+}
+
+.crm__panelTitle {
+  @apply text-sm font-semibold text-text;
+}
+
+.crm__stack {
+  @apply flex flex-col gap-3;
+}
+
+.crm__activity {
+  @apply border-b border-border pb-3 last:border-b-0 last:pb-0;
+}
+
+.crm__activityType {
+  @apply text-xs font-medium uppercase tracking-wide text-text-subtle;
+}
+
+.crm__form {
+  @apply grid max-w-xl gap-4 rounded-md border border-border bg-surface p-4;
+}
+
+.crm__formFields {
+  @apply grid gap-4;
+}
+
+.crm__formActions {
+  @apply flex flex-wrap gap-2;
+}
+
+.crm__alert {
+  @apply rounded-md border border-warning-fg/30 bg-warning-bg px-3 py-2 text-sm text-text;
+}
+
+.crm__taskRow {
+  @apply flex flex-wrap items-center justify-between gap-2 rounded-md border border-border px-3 py-2;
+}
+
+.crm__taskOverdue {
+  @apply border-error-fg/40;
+}

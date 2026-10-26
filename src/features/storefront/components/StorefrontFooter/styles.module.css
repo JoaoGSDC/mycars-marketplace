@@ -1,0 +1,33 @@
+@reference "../../../../styles/index.css";
+
+.storefrontFooter {
+  @apply w-full border-t border-border bg-surface text-text;
+}
+
+.storefrontFooter__inner {
+  @apply mx-auto flex w-full max-w-[var(--container-max)] flex-col gap-4 px-[var(--container-pad)] py-5 sm:flex-row sm:items-center sm:justify-between sm:gap-6;
+}
+
+.storefrontFooter__brandLink {
+  @apply flex min-w-0 items-center gap-2.5 text-sm font-semibold text-text no-underline;
+}
+
+.storefrontFooter__logo {
+  @apply size-8 shrink-0 border border-border;
+}
+
+.storefrontFooter__logoFallback {
+  @apply text-[10px] font-semibold uppercase text-text-muted;
+}
+
+.storefrontFooter__nav ul {
+  @apply flex flex-wrap gap-x-4 gap-y-1;
+}
+
+.storefrontFooter__nav a {
+  @apply text-sm text-text-muted transition-colors hover:text-text;
+}
+
+.storefrontFooter__powered {
+  @apply text-xs text-text-subtle no-underline hover:text-text-muted;
+}

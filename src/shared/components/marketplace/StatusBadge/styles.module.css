@@ -1,0 +1,25 @@
+@reference "../../../../styles/index.css";
+
+.statusBadge {
+  @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium;
+}
+
+.statusBadge--neutral {
+  @apply bg-surface-sunken text-text-muted;
+}
+
+.statusBadge--success {
+  @apply bg-success-bg text-success-fg;
+}
+
+.statusBadge--warning {
+  @apply bg-warning-bg text-warning-fg;
+}
+
+.statusBadge--error {
+  @apply bg-error-bg text-error-fg;
+}
+
+.statusBadge--info {
+  @apply bg-info-bg text-info-fg;
+}

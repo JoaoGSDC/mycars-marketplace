@@ -1,0 +1,33 @@
+@reference "../../../../styles/index.css";
+
+.makeModelFilter {
+  @apply flex flex-col gap-4;
+}
+
+.makeModelFilter__row {
+  @apply flex flex-col gap-3 rounded-md border border-border bg-surface-sunken/50 p-3;
+}
+
+.makeModelFilter__rowHead {
+  @apply flex items-end gap-2;
+}
+
+.makeModelFilter__rowHead > :first-child {
+  @apply min-w-0 flex-1;
+}
+
+.makeModelFilter__modelLine {
+  @apply flex items-end gap-2;
+}
+
+.makeModelFilter__modelLine > :first-child {
+  @apply min-w-0 flex-1;
+}
+
+.makeModelFilter__addModel {
+  @apply self-start text-xs font-medium text-accent-strong hover:text-accent-button;
+}
+
+.makeModelFilter__addRow {
+  @apply text-sm font-medium text-accent-strong hover:text-accent-button;
+}

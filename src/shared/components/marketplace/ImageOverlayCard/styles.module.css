@@ -1,0 +1,38 @@
+@reference "../../../../styles/index.css";
+
+.imageOverlayCard {
+  @apply relative h-full min-h-[280px] overflow-hidden rounded-xl;
+}
+
+.imageOverlayCard__media {
+  @apply absolute inset-0;
+}
+
+.imageOverlayCard__image {
+  @apply size-full object-cover;
+}
+
+.imageOverlayCard__placeholder {
+  @apply h-full rounded-none;
+}
+
+.imageOverlayCard__overlay {
+  @apply absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/25 to-transparent;
+  box-shadow: inset 0 -72px 48px -16px rgb(0 0 0 / 0.7);
+}
+
+.imageOverlayCard__content {
+  @apply absolute inset-x-0 bottom-0 z-[1] flex flex-col gap-2 p-6 text-white;
+}
+
+.imageOverlayCard__title {
+  @apply text-2xl font-semibold text-white;
+}
+
+.imageOverlayCard__subtitle {
+  @apply text-sm text-white/85;
+}
+
+.imageOverlayCard__footer {
+  @apply pt-2;
+}

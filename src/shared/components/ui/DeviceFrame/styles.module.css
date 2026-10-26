@@ -1,0 +1,37 @@
+@reference "../../../../styles/index.css";
+
+.deviceFrame {
+  @apply inline-flex max-w-full;
+}
+
+.deviceFrame__bezel {
+  @apply relative flex w-[280px] max-w-full flex-col rounded-[2.25rem] border-[10px] border-ink bg-ink p-2 shadow-card;
+}
+
+.deviceFrame__notch {
+  @apply absolute left-1/2 top-2 z-10 h-5 w-24 -translate-x-1/2 rounded-full bg-ink;
+}
+
+.deviceFrame__statusBar {
+  @apply relative z-[1] flex items-center justify-between px-4 pb-1 pt-7 text-[10px] font-semibold text-inverse/90;
+}
+
+.deviceFrame__statusIcons {
+  @apply flex items-center gap-1.5;
+}
+
+.deviceFrame__statusSignal {
+  @apply h-2 w-3 rounded-sm border border-inverse/70;
+}
+
+.deviceFrame__statusBattery {
+  @apply h-2.5 w-4 rounded-sm border border-inverse/70;
+}
+
+.deviceFrame__screen {
+  @apply min-h-[420px] overflow-hidden rounded-[1.35rem] bg-bg;
+}
+
+.deviceFrame__homeIndicator {
+  @apply mx-auto mt-2 h-1 w-24 rounded-full bg-inverse/30;
+}

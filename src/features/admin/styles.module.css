@@ -1,0 +1,29 @@
+@reference "../../styles/index.css";
+
+.adminShell {
+  @apply flex min-h-full flex-1 flex-col;
+}
+
+.adminShell__header {
+  @apply border-b border-border px-6 py-4;
+}
+
+.adminShell__label {
+  @apply text-sm font-medium text-text-muted;
+}
+
+.adminShell__body {
+  @apply flex flex-1 flex-col;
+}
+
+.adminHomeView {
+  @apply flex flex-1 flex-col gap-3 px-6 py-12;
+}
+
+.adminHomeView__title {
+  @apply text-xl font-semibold text-text;
+}
+
+.adminHomeView__description {
+  @apply text-text-muted;
+}

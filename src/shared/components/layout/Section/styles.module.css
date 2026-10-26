@@ -1,0 +1,19 @@
+@reference "../../../../styles/index.css";
+
+.section {
+  @apply w-full bg-bg text-text;
+}
+
+.section--spacingDefault {
+  padding-block: var(--section-pad-y);
+}
+
+.section--spacingCompact {
+  padding-block: var(--space-16);
+}
+
+.section__container {
+  @apply mx-auto w-full;
+  max-width: var(--container-max);
+  padding-inline: var(--container-pad);
+}

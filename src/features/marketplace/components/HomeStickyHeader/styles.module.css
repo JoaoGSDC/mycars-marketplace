@@ -1,0 +1,11 @@
+@reference "../../../../styles/index.css";
+
+.homeStickyHeader__absoluteWrap {
+  @apply absolute inset-x-0 top-0 z-[var(--z-header)];
+  padding-top: env(safe-area-inset-top, 0px);
+}
+
+.homeStickyHeader__fixedWrap {
+  @apply fixed inset-x-0 top-0 z-[var(--z-header)];
+  padding-top: env(safe-area-inset-top, 0px);
+}

@@ -1,0 +1,76 @@
+---
+description: Estilo de if/return — chaves, linhas em branco e vars não usadas (ESLint)
+globs: **/*.{ts,tsx,js,jsx}
+alwaysApply: false
+---
+
+# Padrão de `if` e `return`
+
+Aplicado via ESLint (`curly`, `padding-line-between-statements`, `@typescript-eslint/no-unused-vars`).
+
+## `if`
+
+```ts
+// ✅ Sempre com chaves, mesmo uma linha
+if (condition) {
+  return 1;
+}
+
+// ✅ Linha em branco antes (exceto 1º stmt da função) e depois do bloco
+function fn() {
+  if (first) {
+    return 1;
+  }
+
+  doOther();
+}
+
+// ❌ Sem chaves
+if (condition) return 1;
+
+// ❌ Sem linha em branco entre if e próximo stmt (fora do else-if)
+const x = 1;
+if (flag) {
+  return x;
+}
+return 0;
+```
+
+## `return`
+
+```ts
+// ✅ No topo da função — sem linha em branco antes
+function fn() {
+  return 1;
+}
+
+// ✅ Primeiro stmt dentro de bloco (if, for, etc.) — sem linha em branco antes
+if (flag) {
+  return 1;
+}
+
+// ✅ Após outros stmts — linha em branco antes
+function fn() {
+  const x = 1;
+
+  return x;
+}
+
+if (flag) {
+  return 1;
+}
+
+return 0;
+
+// ❌ return colado após const ou após fechamento de if
+const x = 1;
+return x;
+```
+
+## Variáveis e funções não usadas
+
+- ESLint reporta variáveis, parâmetros e funções declaradas mas não usadas.
+- Prefixe com `_` para ignorar intencionalmente: `_unused`, `_req`.
+- Exports (`export function foo`) podem não ser reportados (API pública).
+
+Salvar no VS Code/Cursor: Prettier formata + ESLint `--fix` (ver `.vscode/settings.json`).

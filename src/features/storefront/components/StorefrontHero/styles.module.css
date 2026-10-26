@@ -1,0 +1,63 @@
+@reference "../../../../styles/index.css";
+
+.storefrontHero__shell {
+  /* Acima da section seguinte para o dropdown do Buscar não ficar por baixo. */
+  @apply relative z-[1] w-full;
+}
+
+.storefrontHero {
+  @apply relative flex min-h-[100dvh] flex-col bg-ink text-inverse;
+}
+
+.storefrontHero__media {
+  @apply absolute inset-0 overflow-hidden;
+}
+
+.storefrontHero__image {
+  @apply object-cover;
+}
+
+.storefrontHero__image--center {
+  object-position: center center;
+}
+
+.storefrontHero__image--top {
+  object-position: center top;
+}
+
+.storefrontHero__image--bottom {
+  object-position: center bottom;
+}
+
+.storefrontHero__placeholder {
+  @apply h-full rounded-none;
+}
+
+.storefrontHero__overlay {
+  @apply absolute inset-0 bg-ink/60;
+}
+
+.storefrontHero__content {
+  @apply relative z-[var(--z-base)] flex flex-1 flex-col gap-8 px-[var(--container-pad)] pb-8 md:pb-10;
+  padding-top: calc(7rem + env(safe-area-inset-top, 0px));
+}
+
+.storefrontHero__copy {
+  @apply flex max-w-2xl flex-1 flex-col justify-center;
+}
+
+.storefrontHero__title {
+  @apply mt-3 text-[length:var(--text-h1)] font-black leading-[var(--leading-display)] tracking-tight text-inverse;
+}
+
+.storefrontHero__subtitle {
+  @apply mt-4 max-w-xl text-base text-white/80 md:text-lg;
+}
+
+.storefrontHero__meta {
+  @apply mt-2 text-sm text-white/65;
+}
+
+.storefrontHero__search {
+  @apply relative z-[var(--z-dropdown)] w-full shrink-0;
+}

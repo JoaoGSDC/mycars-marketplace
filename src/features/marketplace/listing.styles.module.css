@@ -1,0 +1,192 @@
+@reference "../../styles/index.css";
+
+.listing {
+  @apply flex min-h-full flex-1 flex-col bg-bg text-text;
+}
+
+.listing__skip {
+  @apply sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[var(--z-max)] focus:rounded-md focus:bg-surface focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-text focus:ring-2 focus:ring-accent-strong;
+}
+
+.listing__main {
+  @apply w-full px-[var(--container-pad)] pt-4 lg:pb-8;
+  padding-bottom: var(--page-pad-bottom-mobile);
+}
+
+@media (min-width: 1024px) {
+  .listing__main {
+    padding-bottom: 2rem;
+  }
+}
+
+.listing__breadcrumb {
+  @apply mb-3;
+}
+
+.listing__titleRow {
+  @apply mb-5 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between lg:gap-6;
+}
+
+.listing__titleGroup {
+  @apply flex min-w-0 flex-col gap-1.5;
+}
+
+.listing__title {
+  @apply text-[length:var(--text-h1)] font-semibold tracking-tight text-text;
+}
+
+.listing__titleMeta {
+  @apply text-sm text-text-muted;
+}
+
+.listing__titleMetaFilters {
+  @apply text-text-subtle;
+}
+
+.listing__bodyTypes {
+  @apply min-w-0 w-full lg:w-auto lg:max-w-xl;
+}
+
+.listing__layout {
+  @apply grid gap-6 lg:grid-cols-[18.5rem_minmax(0,1fr)] xl:grid-cols-[19rem_minmax(0,1fr)];
+}
+
+.listing__sidebar {
+  @apply sticky top-24 hidden max-h-[calc(100vh-7rem)] overflow-y-auto lg:block;
+}
+
+.listing__filtersPanel {
+  @apply rounded-md border border-border bg-surface p-4;
+}
+
+.listing__filtersHead {
+  @apply mb-4 flex items-center justify-between gap-3 border-b border-border pb-3;
+}
+
+.listing__filtersTitleRow {
+  @apply flex items-center gap-2;
+}
+
+.listing__filtersTitle {
+  @apply text-sm font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-text;
+}
+
+.listing__filtersClear {
+  @apply text-xs font-medium text-accent-strong transition-colors hover:text-accent-button focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-strong;
+}
+
+.listing__results {
+  @apply min-w-0 space-y-4;
+}
+
+/* Footer no fundo da viewport sem inflar o miolo com poucos resultados */
+.listing > footer {
+  @apply mt-auto;
+}
+
+.listing__toolbar {
+  @apply flex flex-row items-center gap-2 rounded-md border border-border bg-surface p-2.5 sm:gap-3 sm:p-3;
+}
+
+.listing__search {
+  @apply min-w-0 flex-1;
+}
+
+.listing__toolbarMeta {
+  @apply flex shrink-0 items-center gap-2;
+}
+
+.listing__sort {
+  @apply hidden w-[11.5rem] shrink-0 lg:block;
+}
+
+.listing__viewToggle {
+  @apply flex items-center gap-0.5 rounded-md border border-border bg-surface-sunken p-0.5;
+}
+
+.listing__viewBtn {
+  @apply !size-9 !rounded-sm border-0;
+}
+
+.listing__viewBtn--active {
+  @apply !bg-surface !text-text shadow-card;
+}
+
+.listing__chips {
+  @apply flex flex-wrap items-center gap-2;
+}
+
+.listing__chip {
+  @apply rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-strong;
+}
+
+.listing__chipsClear {
+  @apply text-sm font-medium text-accent-strong hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-strong;
+}
+
+.listing__grid {
+  @apply grid grid-cols-1 gap-4 transition-opacity duration-200 md:grid-cols-2 xl:grid-cols-3;
+}
+
+.listing__gridItem {
+  @apply min-w-0;
+}
+
+.listing__grid > .listing__gridItem {
+  @apply max-w-md;
+}
+
+.listing__list {
+  @apply flex flex-col gap-2.5 transition-opacity duration-200 sm:gap-3;
+}
+
+.listing__list > .listing__gridItem {
+  @apply w-full max-w-none;
+}
+
+.listing__resultsPending {
+  @apply opacity-60;
+}
+
+.listing__grid--pending {
+  @apply opacity-60;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .listing__grid {
+    @apply transition-none;
+  }
+}
+
+.listing__empty {
+  @apply col-span-full py-16;
+}
+
+.listing__pagination {
+  @apply pt-4;
+}
+
+.listing__mobileBar {
+  @apply fixed inset-x-4 z-[var(--z-sticky)] flex min-h-[var(--touch-min)] items-center justify-between rounded-full border border-border bg-surface px-2 py-2 shadow-card lg:hidden;
+  bottom: max(1rem, env(safe-area-inset-bottom, 0px));
+}
+
+.listing__mobileBtn {
+  @apply flex min-h-[var(--touch-min)] flex-1 items-center justify-center gap-2 rounded-full px-3 py-2.5 text-sm font-semibold text-text active:bg-surface-sunken focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-strong;
+}
+
+.listing__mobileDivider {
+  @apply h-6 w-px bg-border;
+}
+
+.listing__sortList {
+  @apply space-y-1;
+}
+
+.listing__sortOption {
+  @apply w-full rounded-md px-3 py-3 text-left text-sm font-medium text-text hover:bg-surface-sunken focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-strong;
+}
+
+.listing__sortOption--active {
+  @apply bg-accent-soft text-accent-strong;
+}

@@ -1,0 +1,174 @@
+@reference "../../../../styles/index.css";
+
+.dashboardShell {
+  @apply flex min-h-[28rem] w-full overflow-hidden rounded-lg border border-border bg-bg text-text;
+}
+
+.dashboardShell--fullViewport {
+  @apply min-h-svh rounded-none border-0;
+}
+
+.dashboardShell__sidebar {
+  @apply fixed inset-y-0 left-0 z-[var(--z-overlay)] flex w-60 -translate-x-full flex-col border-r border-border bg-surface transition-[width,transform] duration-[var(--duration-normal)] ease-[var(--ease-out)] md:static md:z-auto md:translate-x-0;
+}
+
+.dashboardShell--collapsed .dashboardShell__sidebar {
+  @apply md:w-[4.25rem];
+}
+
+.dashboardShell__sidebar--open {
+  @apply translate-x-0;
+}
+
+.dashboardShell__backdrop {
+  @apply fixed inset-0 z-[calc(var(--z-overlay)-1)] bg-ink/40 md:hidden;
+}
+
+.dashboardShell__brand {
+  @apply flex h-12 items-center justify-between gap-2 border-b border-border px-3;
+}
+
+.dashboardShell--collapsed .dashboardShell__brand {
+  @apply md:justify-center md:px-2;
+}
+
+.dashboardShell--collapsed .dashboardShell__brand :global(a),
+.dashboardShell--collapsed .dashboardShell__brand :global(img) {
+  @apply md:mx-auto;
+}
+
+.dashboardShell__store {
+  @apply border-b border-border px-3 py-3;
+}
+
+.dashboardShell--collapsed .dashboardShell__store {
+  @apply md:hidden;
+}
+
+.dashboardShell__storeName {
+  @apply truncate text-sm font-semibold text-text;
+}
+
+.dashboardShell__storeMeta {
+  @apply mt-0.5 truncate text-xs text-text-muted;
+}
+
+.dashboardShell__closeMobile {
+  @apply md:hidden;
+}
+
+.dashboardShell__nav {
+  @apply flex-1 overflow-y-auto px-2 py-3;
+}
+
+.dashboardShell__navSection {
+  @apply mb-3 last:mb-0;
+}
+
+.dashboardShell__navGroupLabel {
+  @apply px-2.5 pb-1.5 text-[length:var(--text-eyebrow)] font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-text-subtle;
+}
+
+.dashboardShell--collapsed .dashboardShell__navGroupLabel {
+  @apply md:sr-only;
+}
+
+.dashboardShell__navList {
+  @apply flex flex-col gap-0.5;
+}
+
+.dashboardShell__navLink {
+  @apply flex min-h-[var(--touch-min)] items-center gap-2.5 rounded-md px-2.5 py-2 text-sm font-medium text-text-muted transition-colors hover:bg-surface-sunken hover:text-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-strong;
+}
+
+.dashboardShell__navLink--active {
+  @apply bg-accent-soft font-semibold text-accent-strong;
+}
+
+.dashboardShell__navLink--collapsed {
+  @apply md:justify-center md:px-2;
+}
+
+.dashboardShell__navIcon {
+  @apply flex size-4 shrink-0 items-center justify-center text-current [&_svg]:size-4;
+}
+
+.dashboardShell__navLabel {
+  @apply min-w-0 flex-1 truncate;
+}
+
+.dashboardShell--collapsed .dashboardShell__navLabel {
+  @apply md:hidden;
+}
+
+.dashboardShell__navBadge {
+  @apply rounded-full bg-accent-soft px-1.5 py-0.5 text-[length:var(--text-caption)] font-semibold tabular-nums text-accent-strong;
+}
+
+.dashboardShell--collapsed .dashboardShell__navBadge {
+  @apply md:hidden;
+}
+
+.dashboardShell__collapseRow {
+  @apply hidden border-t border-border p-2 md:block;
+}
+
+.dashboardShell__collapseBtn {
+  @apply flex min-h-[var(--touch-min)] w-full items-center justify-center gap-2 rounded-md px-2 text-xs font-medium text-text-muted transition-colors hover:bg-surface-sunken hover:text-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-strong;
+}
+
+.dashboardShell--collapsed .dashboardShell__collapseBtn span {
+  @apply hidden;
+}
+
+.dashboardShell__main {
+  @apply flex min-w-0 flex-1 flex-col;
+}
+
+.dashboardShell__topbar {
+  @apply flex h-12 shrink-0 items-center justify-between gap-3 border-b border-border bg-surface px-3 md:px-4;
+  padding-top: env(safe-area-inset-top, 0px);
+}
+
+.dashboardShell__topbarStart {
+  @apply flex min-w-0 items-center gap-2;
+}
+
+.dashboardShell__menuButton {
+  @apply text-text-muted md:hidden hover:text-text;
+}
+
+.dashboardShell__title {
+  @apply truncate text-sm font-semibold text-text;
+}
+
+.dashboardShell__topbarEnd {
+  @apply flex min-w-0 items-center gap-2;
+}
+
+.dashboardShell__user {
+  @apply flex items-center gap-2;
+}
+
+.dashboardShell__userAvatar {
+  @apply flex size-8 shrink-0 items-center justify-center rounded-full bg-surface-sunken text-xs font-semibold text-text;
+}
+
+.dashboardShell__userName {
+  @apply hidden text-sm font-medium text-text-muted sm:inline;
+}
+
+.dashboardShell__breadcrumb {
+  @apply mb-4;
+}
+
+.dashboardShell__content {
+  @apply min-h-0 flex-1 overflow-auto bg-bg p-4 md:p-5;
+  padding-bottom: max(1rem, env(safe-area-inset-bottom, 0px));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dashboardShell__sidebar {
+    @apply transition-none;
+  }
+}

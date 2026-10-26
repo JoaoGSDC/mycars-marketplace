@@ -1,0 +1,17 @@
+@reference "../../styles/index.css";
+
+.comingSoon {
+  @apply flex min-h-dvh flex-col bg-bg text-text;
+}
+
+.comingSoon__main {
+  @apply mx-auto flex w-full max-w-[var(--container-max)] flex-1 flex-col items-start justify-center gap-4 px-[var(--container-pad)] py-16;
+}
+
+.comingSoon__eyebrow {
+  @apply text-xs font-bold uppercase tracking-[0.06em] text-accent-strong;
+}
+
+.comingSoon__description {
+  @apply max-w-lg text-text-muted;
+}

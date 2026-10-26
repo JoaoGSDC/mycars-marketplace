@@ -1,0 +1,53 @@
+@reference "../../styles/index.css";
+
+.sales {
+  @apply flex flex-col gap-6;
+}
+
+.sales__kpi {
+  @apply grid gap-3 sm:grid-cols-2 lg:grid-cols-3;
+}
+
+.sales__kpi > :global(section) {
+  @apply rounded-md border border-border bg-surface p-4;
+}
+
+.sales__kpiValue {
+  @apply text-lg font-semibold tabular-nums text-text;
+}
+
+.sales__meta {
+  @apply text-xs text-text-muted;
+}
+
+.sales__form {
+  @apply grid max-w-xl gap-4 rounded-md border border-border bg-surface p-4;
+}
+
+.sales__formActions {
+  @apply flex flex-wrap gap-2;
+}
+
+.sales__panel {
+  @apply flex flex-col gap-4 rounded-md border border-border bg-surface p-4;
+}
+
+.sales__panelTitle {
+  @apply text-sm font-semibold text-text;
+}
+
+.sales__detail {
+  @apply grid gap-6 lg:grid-cols-[1fr_300px];
+}
+
+.sales__activity {
+  @apply border-b border-border pb-3 last:border-b-0 last:pb-0;
+}
+
+.sales__alert {
+  @apply rounded-md border border-warning-fg/30 bg-warning-bg px-3 py-2 text-sm text-text;
+}
+
+.sales__hint {
+  @apply mt-1 text-xs text-text-muted;
+}

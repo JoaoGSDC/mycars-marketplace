@@ -1,0 +1,137 @@
+@reference "../../styles/index.css";
+
+.panel {
+  @apply flex flex-col gap-4;
+}
+
+.panel__header {
+  @apply flex flex-wrap items-start justify-between gap-4;
+}
+
+.panel__title {
+  @apply text-xl font-semibold text-text;
+}
+
+.panel__text {
+  @apply text-sm text-text-muted;
+}
+
+.panel__grid {
+  @apply grid gap-4 rounded-md border border-border bg-surface-sunken p-4 sm:grid-cols-2;
+}
+
+.panel__grid dt {
+  @apply text-xs font-medium uppercase tracking-wide text-text-subtle;
+}
+
+.panel__grid dd {
+  @apply text-sm text-text;
+}
+
+.panel__notice {
+  @apply rounded-md border border-border bg-info-bg px-4 py-3 text-sm text-info-fg;
+}
+
+.panel__alert {
+  @apply rounded-md border border-error-fg/20 bg-error-bg px-4 py-3 text-sm text-error-fg;
+}
+
+.panel__alertTitle {
+  @apply mb-1 font-semibold;
+}
+
+.panel__success {
+  @apply rounded-md border border-success-fg/20 bg-success-bg px-4 py-3 text-sm text-success-fg;
+}
+
+.panel__formGrid {
+  @apply grid gap-4 md:grid-cols-2;
+}
+
+.panel__colors {
+  @apply rounded-md border border-border p-4;
+}
+
+.panel__colorList {
+  @apply mt-2 flex flex-wrap gap-3;
+}
+
+.panel__colorOption {
+  @apply inline-flex cursor-pointer items-center gap-2 text-sm text-text;
+}
+
+.panel__swatch {
+  @apply size-5 rounded-full border border-border;
+}
+
+.panel__label {
+  @apply text-sm font-medium text-text;
+}
+
+.panel__textarea {
+  @apply w-full rounded-md border border-border bg-surface-sunken px-3 py-2.5 text-sm text-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-strong;
+}
+
+.panel__setupLayout {
+  @apply grid gap-6 xl:grid-cols-[minmax(0,1.15fr)_minmax(20rem,26rem)] xl:items-start;
+}
+
+.panel__setupForm {
+  @apply flex min-w-0 flex-col gap-4;
+}
+
+.panel__tabBody {
+  @apply mt-4 flex flex-col gap-4;
+}
+
+.panel__heroList {
+  @apply mt-2 flex flex-col gap-3;
+}
+
+.panel__heroOption {
+  @apply flex cursor-pointer items-start gap-3 rounded-md border border-border bg-surface p-3 text-sm text-text;
+}
+
+.panel__heroHint {
+  @apply mt-0.5 block text-xs text-text-muted;
+}
+
+.panel__setupActions {
+  @apply flex flex-wrap gap-3 pt-2;
+}
+
+.panel__preview {
+  @apply flex flex-col gap-3 xl:sticky xl:top-4;
+}
+
+.panel__previewHead {
+  @apply flex items-center justify-between gap-3;
+}
+
+.panel__previewTitle {
+  @apply text-sm font-semibold text-text;
+}
+
+.panel__previewToggle {
+  @apply flex gap-1 rounded-md border border-border bg-surface-sunken p-0.5;
+}
+
+.panel__previewChip {
+  @apply rounded-sm px-2.5 py-1 text-xs font-medium text-text-muted;
+}
+
+.panel__previewChip--active {
+  @apply rounded-sm bg-surface px-2.5 py-1 text-xs font-semibold text-text shadow-card;
+}
+
+.panel__previewDesktop {
+  @apply overflow-hidden rounded-md border border-border bg-bg;
+}
+
+.panel__previewSurface {
+  @apply min-h-[12rem] overflow-hidden bg-bg;
+}
+
+.panel__previewHint {
+  @apply text-xs text-text-subtle;
+}

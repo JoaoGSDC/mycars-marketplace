@@ -1,0 +1,12 @@
+export { CustomersListView } from './CustomersListView';
+export type { CustomersListViewProps } from './CustomersListView';
+export { CustomerFormView } from './CustomerFormView';
+export type { CustomerFormViewProps } from './CustomerFormView';
+export { CustomerDetailView } from './CustomerDetailView';
+export type { CustomerDetailViewProps } from './CustomerDetailView';
+export { OpportunitiesBoardView } from './OpportunitiesBoardView';
+export type { OpportunitiesBoardViewProps } from './OpportunitiesBoardView';
+export { QuickOpportunityFormView } from './QuickOpportunityFormView';
+export type { QuickOpportunityFormViewProps } from './QuickOpportunityFormView';
+export { OpportunityDetailView } from './OpportunityDetailView';
+export type { OpportunityDetailViewProps } from './OpportunityDetailView';

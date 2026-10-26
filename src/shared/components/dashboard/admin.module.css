@@ -1,0 +1,418 @@
+@reference "../../../styles/index.css";
+
+/* —— Page header —— */
+.adminPageHeader {
+  @apply flex flex-wrap items-start justify-between gap-4;
+}
+
+.adminPageHeader__copy {
+  @apply min-w-0 flex-1;
+}
+
+.adminPageHeader__title {
+  @apply text-xl font-semibold tracking-tight text-text;
+}
+
+.adminPageHeader__description {
+  @apply mt-1 max-w-2xl text-sm text-text-muted;
+}
+
+.adminPageHeader__actions {
+  @apply flex flex-wrap items-center justify-end gap-2;
+}
+
+/* —— Stat chips —— */
+.adminStatChips {
+  @apply flex flex-wrap gap-2;
+}
+
+.adminStatChip {
+  @apply inline-flex min-h-[var(--touch-min)] items-center gap-1.5 rounded-md border border-border bg-surface px-3 py-1.5 text-xs text-text transition-colors duration-[var(--duration-fast)] ease-[var(--ease-out)] hover:bg-surface-sunken focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-strong motion-reduce:transition-none;
+}
+
+.adminStatChipStrong {
+  @apply font-semibold tabular-nums;
+}
+
+.adminStatChipActive {
+  @apply border-accent-strong bg-accent-soft text-accent-strong;
+}
+
+/* —— Filter bar —— */
+.adminFilterBar {
+  @apply grid gap-3 rounded-md border border-border bg-surface p-4 sm:grid-cols-2 lg:grid-cols-4;
+}
+
+.adminFilterBar__actions {
+  @apply flex flex-wrap items-end gap-2 sm:col-span-2 lg:col-span-4;
+
+  & > :global(button),
+  & > :global(a) {
+    @apply min-h-[var(--touch-min)];
+  }
+}
+
+/* —— Data table —— */
+.adminDataTable {
+  @apply overflow-x-auto rounded-md border border-border bg-surface;
+}
+
+.adminDataTable__table {
+  @apply w-full min-w-[720px] border-collapse text-left text-sm;
+}
+
+.adminDataTable__table th {
+  @apply border-b border-border bg-surface-sunken px-3 py-2.5 text-xs font-medium uppercase tracking-wide text-text-subtle;
+}
+
+.adminDataTable__table td {
+  @apply border-b border-border px-3 py-3 align-middle text-text;
+}
+
+.adminDataTable__table tbody tr {
+  @apply transition-colors hover:bg-surface-sunken/60;
+}
+
+.adminDataTable__table tbody tr:last-child td {
+  @apply border-b-0;
+}
+
+.adminDataTable__table th[data-align='right'],
+.adminDataTable__table td[data-align='right'] {
+  @apply text-right tabular-nums;
+}
+
+.adminDataTable__table th[data-align='center'],
+.adminDataTable__table td[data-align='center'] {
+  @apply text-center;
+}
+
+.adminDataTable__empty {
+  @apply p-6;
+}
+
+.adminDataTable__loading {
+  @apply flex flex-col gap-2 p-4;
+}
+
+.adminDataTable__footer {
+  @apply flex flex-wrap items-center justify-between gap-3;
+}
+
+.adminDataTable__meta {
+  @apply text-xs text-text-muted;
+}
+
+.adminDataTable__rowLink {
+  @apply font-medium text-text hover:text-accent-strong focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-strong;
+}
+
+.adminDataTable__rowMeta {
+  @apply text-xs text-text-muted;
+}
+
+.adminDataTable__rowActions {
+  @apply flex flex-wrap items-center justify-end gap-2;
+}
+
+/* —— Form actions —— */
+.adminFormActions {
+  @apply flex flex-wrap items-center gap-2 border-t border-border bg-surface pt-4;
+}
+
+.adminFormActions--sticky {
+  @apply sticky bottom-0 z-[var(--z-sticky)] -mx-4 border-t border-border px-4 pb-[max(1rem,env(safe-area-inset-bottom,0px))] pt-3 shadow-[0_-4px_16px_rgb(17_17_17_/0.06)] md:-mx-5 md:px-5;
+}
+
+.adminFormActions > :global(button),
+.adminFormActions > :global(a) {
+  @apply min-h-[var(--touch-min)];
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .adminStatChip,
+  .adminDataTable__table tbody tr {
+    @apply transition-none;
+  }
+}
+
+.adminFormActions__spacer {
+  @apply hidden flex-1 sm:block;
+}
+
+/* —— Section —— */
+.adminSection {
+  @apply flex flex-col gap-3;
+}
+
+.adminSection--fill {
+  @apply min-h-0 flex-1;
+}
+
+.adminSection__title {
+  @apply text-base font-semibold text-text;
+}
+
+.adminSection__description {
+  @apply text-sm text-text-muted;
+}
+
+.adminSection__body {
+  @apply flex flex-col gap-3;
+}
+
+.adminSection__body--fill {
+  @apply min-h-0 flex-1;
+}
+
+/* —— Form layout —— */
+.adminFormLayout {
+  @apply mx-auto flex w-full max-w-3xl flex-col gap-6;
+}
+
+.adminFormLayout--sm {
+  @apply max-w-xl;
+}
+
+.adminFormLayout--wide {
+  @apply max-w-5xl;
+}
+
+.adminFormLayout--full {
+  @apply mx-0 max-w-none;
+}
+
+.adminFormLayout--withSummary {
+  @apply max-w-5xl lg:grid lg:grid-cols-[minmax(0,1fr)_16rem] lg:items-start lg:gap-8;
+}
+
+.adminFormLayout--full.adminFormLayout--withSummary {
+  @apply max-w-none lg:grid-cols-[minmax(0,1fr)_minmax(15rem,18rem)] lg:gap-6;
+}
+
+.adminFormLayout--fill {
+  @apply min-h-[calc(100svh-13.5rem)] items-stretch md:min-h-[calc(100svh-14.5rem)];
+}
+
+.adminFormLayout__main {
+  @apply flex min-w-0 flex-col gap-6;
+}
+
+.adminFormLayout__main--card {
+  @apply rounded-md border border-border bg-surface p-4 md:p-5;
+}
+
+.adminFormLayout__main--fill {
+  @apply min-h-0 flex-1;
+}
+
+.adminFormLayout__summary {
+  @apply min-w-0 lg:sticky lg:top-4;
+}
+
+/* —— Form stepper —— */
+.adminFormStepper {
+  @apply flex flex-col gap-3;
+}
+
+.adminFormStepper__mobile {
+  @apply text-sm font-medium text-text md:hidden;
+}
+
+.adminFormStepper__list {
+  @apply hidden list-none flex-wrap gap-2 p-0 md:flex;
+}
+
+.adminFormStepper__item {
+  @apply min-h-[var(--touch-min)];
+}
+
+.adminFormStepper__button,
+.adminFormStepper__static {
+  @apply inline-flex min-h-[var(--touch-min)] items-center gap-2 rounded-md border border-border px-3 py-1.5 text-xs text-text-muted transition-colors duration-[var(--duration-fast)] ease-[var(--ease-out)] motion-reduce:transition-none;
+}
+
+.adminFormStepper__button {
+  @apply cursor-pointer bg-surface hover:bg-surface-sunken focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-strong;
+}
+
+.adminFormStepper__item--current .adminFormStepper__button,
+.adminFormStepper__item--current .adminFormStepper__static {
+  @apply border-accent-strong bg-accent-soft font-medium text-accent-strong;
+}
+
+.adminFormStepper__item--done .adminFormStepper__button,
+.adminFormStepper__item--done .adminFormStepper__static {
+  @apply border-success-fg/30 text-success-fg;
+}
+
+.adminFormStepper__item--error .adminFormStepper__button,
+.adminFormStepper__item--error .adminFormStepper__static {
+  @apply border-error-fg/40 text-error-fg;
+}
+
+.adminFormStepper__item--pending .adminFormStepper__button,
+.adminFormStepper__item--pending .adminFormStepper__static {
+  @apply border-warning-fg/40 text-warning-fg;
+}
+
+.adminFormStepper__marker {
+  @apply inline-flex size-5 shrink-0 items-center justify-center rounded-full border border-current text-[10px] font-semibold tabular-nums;
+}
+
+.adminFormStepper__marker--done {
+  @apply bg-success-bg;
+}
+
+.adminFormStepper__marker--current {
+  @apply bg-accent-soft;
+}
+
+.adminFormStepper__marker--error {
+  @apply bg-error-bg;
+}
+
+.adminFormStepper__marker--pending {
+  @apply bg-warning-bg;
+}
+
+.adminFormStepper__label {
+  @apply whitespace-nowrap;
+}
+
+/* —— Form status —— */
+.adminFormStatus {
+  @apply inline-flex items-center gap-2 text-xs text-text-muted;
+}
+
+.adminFormStatus__dot {
+  @apply size-1.5 shrink-0 rounded-full bg-text-subtle;
+}
+
+.adminFormStatus--dirty .adminFormStatus__dot {
+  @apply bg-warning-fg;
+}
+
+.adminFormStatus--saving .adminFormStatus__dot {
+  @apply animate-pulse bg-accent-strong;
+}
+
+.adminFormStatus--draft_saved .adminFormStatus__dot,
+.adminFormStatus--saved .adminFormStatus__dot {
+  @apply bg-success-fg;
+}
+
+.adminFormStatus--error {
+  @apply text-error-fg;
+}
+
+.adminFormStatus--error .adminFormStatus__dot {
+  @apply bg-error-fg;
+}
+
+/* —— Form error summary —— */
+.adminFormErrorSummary {
+  @apply rounded-md border border-error-fg/20 bg-error-bg px-4 py-3 text-sm text-error-fg;
+}
+
+.adminFormErrorSummary__title {
+  @apply font-medium;
+}
+
+.adminFormErrorSummary__list {
+  @apply mt-2 list-disc space-y-1 pl-4;
+}
+
+.adminFormErrorSummary__link {
+  @apply underline-offset-2 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-strong;
+}
+
+/* —— Entity summary —— */
+.adminEntitySummary {
+  @apply rounded-md border border-border bg-surface;
+}
+
+.adminEntitySummary__toggle {
+  @apply flex w-full min-h-[var(--touch-min)] items-center justify-between gap-2 px-3 py-2 text-sm font-medium text-text lg:hidden;
+}
+
+.adminEntitySummary__toggleLabel {
+  @apply text-text;
+}
+
+.adminEntitySummary__chevron {
+  @apply size-4 text-text-muted transition-transform duration-[var(--duration-fast)] ease-[var(--ease-out)] motion-reduce:transition-none;
+}
+
+.adminEntitySummary--open .adminEntitySummary__chevron {
+  @apply rotate-180;
+}
+
+.adminEntitySummary__body {
+  @apply flex flex-col gap-3 p-3;
+}
+
+.adminEntitySummary--collapsible .adminEntitySummary__body {
+  @apply hidden lg:flex;
+}
+
+.adminEntitySummary--collapsible.adminEntitySummary--open .adminEntitySummary__body {
+  @apply flex border-t border-border;
+}
+
+.adminEntitySummary__header {
+  @apply flex gap-3;
+}
+
+.adminEntitySummary__media,
+.adminEntitySummary__mediaPlaceholder {
+  @apply size-16 shrink-0 overflow-hidden rounded-md bg-surface-sunken;
+}
+
+.adminEntitySummary__image {
+  @apply size-full object-cover;
+}
+
+.adminEntitySummary__identity {
+  @apply min-w-0 flex-1;
+}
+
+.adminEntitySummary__title {
+  @apply truncate text-sm font-semibold text-text;
+}
+
+.adminEntitySummary__subtitle {
+  @apply truncate text-xs text-text-muted;
+}
+
+.adminEntitySummary__badge {
+  @apply mt-1;
+}
+
+.adminEntitySummary__list {
+  @apply flex flex-col gap-1.5 border-t border-border pt-3 text-xs;
+}
+
+.adminEntitySummary__row {
+  @apply flex items-start justify-between gap-2;
+}
+
+.adminEntitySummary__row dt {
+  @apply text-text-muted;
+}
+
+.adminEntitySummary__row dd {
+  @apply text-right font-medium text-text;
+}
+
+.adminEntitySummary__pending {
+  @apply rounded-md border border-warning-fg/20 bg-warning-bg px-2.5 py-2 text-xs text-warning-fg;
+}
+
+.adminEntitySummary__pendingTitle {
+  @apply mb-1 font-medium;
+}
+
+.adminEntitySummary__pending ul {
+  @apply list-disc space-y-0.5 pl-4;
+}

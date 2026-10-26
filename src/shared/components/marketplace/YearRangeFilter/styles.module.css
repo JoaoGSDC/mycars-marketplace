@@ -1,0 +1,5 @@
+@reference "../../../../styles/index.css";
+
+.yearRangeFilter {
+  @apply grid grid-cols-2 gap-4;
+}

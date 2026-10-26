@@ -1,0 +1,235 @@
+@reference "../../styles/index.css";
+
+.designSystem {
+  @apply flex min-h-full flex-1 flex-col bg-bg text-text;
+}
+
+.designSystem__toc {
+  @apply sticky top-0 z-[var(--z-sticky)] border-b border-border bg-surface/95 backdrop-blur-sm;
+}
+
+.designSystem__tocInner {
+  @apply mx-auto flex max-w-[var(--container-max)] gap-3 overflow-x-auto px-[var(--container-pad)] py-3;
+}
+
+.designSystem__tocLink {
+  @apply shrink-0 whitespace-nowrap rounded-md px-2.5 py-1.5 text-xs font-medium text-text-muted transition-colors hover:bg-surface-sunken hover:text-text;
+}
+
+.designSystem__main {
+  @apply mx-auto flex w-full max-w-[var(--container-max)] flex-col gap-16 px-[var(--container-pad)] py-10 md:gap-20 md:py-14;
+}
+
+.designSystem__intro {
+  @apply flex max-w-2xl flex-col gap-3;
+}
+
+.designSystem__introTitle {
+  @apply text-[length:var(--text-h1)] font-semibold leading-tight tracking-tight text-text;
+}
+
+.designSystem__introLead {
+  @apply text-base text-text-muted;
+}
+
+.designSystem__section {
+  @apply flex scroll-mt-20 flex-col gap-6;
+}
+
+.designSystem__sectionTitle {
+  @apply text-[length:var(--text-h2)] font-semibold leading-tight tracking-tight text-text;
+}
+
+.designSystem__sectionLead {
+  @apply max-w-2xl text-sm text-text-muted;
+}
+
+.designSystem__subTitle {
+  @apply text-sm font-semibold uppercase tracking-[0.06em] text-text-muted;
+}
+
+.designSystem__row {
+  @apply flex flex-wrap items-center gap-3;
+}
+
+.designSystem__stack {
+  @apply flex flex-col gap-4;
+}
+
+.designSystem__grid {
+  @apply grid gap-4 sm:grid-cols-2 lg:grid-cols-3;
+}
+
+.designSystem__gridWide {
+  @apply grid gap-4 lg:grid-cols-[minmax(16rem,18rem)_1fr];
+}
+
+.designSystem__swatchGrid {
+  @apply grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5;
+}
+
+.designSystem__swatch {
+  @apply flex flex-col gap-2;
+}
+
+.designSystem__swatchChip {
+  @apply h-14 rounded-md border border-border;
+}
+
+.designSystem__swatchLabel {
+  @apply text-xs font-medium text-text;
+}
+
+.designSystem__typeSample {
+  @apply flex flex-col gap-4 rounded-lg border border-border bg-surface p-5;
+}
+
+.designSystem__typeDisplay {
+  font-size: var(--text-display);
+  line-height: var(--leading-display);
+  letter-spacing: var(--tracking-tight);
+  @apply font-semibold text-text;
+}
+
+.designSystem__typeH1 {
+  font-size: var(--text-h1);
+  @apply font-semibold leading-tight tracking-tight text-text;
+}
+
+.designSystem__typeH2 {
+  font-size: var(--text-h2);
+  @apply font-semibold leading-tight tracking-tight text-text;
+}
+
+.designSystem__typeH3 {
+  font-size: var(--text-h3);
+  @apply font-semibold leading-snug text-text;
+}
+
+.designSystem__typeH4 {
+  font-size: var(--text-h4);
+  @apply font-semibold leading-snug text-text;
+}
+
+.designSystem__typeBody {
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+  @apply text-text;
+}
+
+.designSystem__typeSmall {
+  font-size: var(--text-small);
+  @apply text-text-muted;
+}
+
+.designSystem__typeCaption {
+  font-size: var(--text-caption);
+  @apply text-text-subtle;
+}
+
+.designSystem__radiusRow {
+  @apply flex flex-wrap items-end gap-4;
+}
+
+.designSystem__radiusSample {
+  @apply flex size-16 items-center justify-center border border-border bg-surface-sunken text-[length:var(--text-caption)] text-text-muted;
+}
+
+.designSystem__shadowRow {
+  @apply flex flex-wrap gap-4;
+}
+
+.designSystem__shadowSample {
+  @apply flex h-20 w-36 items-center justify-center rounded-lg border border-border bg-surface text-xs text-text-muted;
+}
+
+.designSystem__demoPanel {
+  @apply rounded-lg border border-border bg-surface p-5;
+}
+
+.designSystem__vehicleGrid {
+  @apply grid gap-4 sm:grid-cols-2 lg:grid-cols-3;
+}
+
+.designSystem__listingStack {
+  @apply flex flex-col gap-4;
+}
+
+.designSystem__brandGrid {
+  @apply grid gap-3 sm:grid-cols-2 lg:grid-cols-3;
+}
+
+.designSystem__statusGrid {
+  @apply flex flex-wrap gap-2;
+}
+
+.designSystem__composeFrame {
+  @apply overflow-hidden rounded-2xl border border-border;
+}
+
+.designSystem__heroCompose {
+  @apply relative min-h-[32rem] overflow-hidden;
+}
+
+.designSystem__heroBg {
+  @apply absolute inset-0;
+}
+
+.designSystem__heroBg > * {
+  @apply h-full rounded-none;
+}
+
+.designSystem__heroOverlay {
+  @apply absolute inset-0 bg-ink/55;
+}
+
+.designSystem__heroContent {
+  @apply relative z-10 flex min-h-[32rem] flex-col justify-end gap-8 px-[var(--container-pad)] pb-10 pt-28;
+}
+
+.designSystem__heroCopy {
+  @apply flex max-w-xl flex-col gap-3 text-inverse;
+}
+
+.designSystem__heroTitle {
+  font-size: var(--text-h1);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  @apply font-semibold;
+}
+
+.designSystem__listingCompose {
+  @apply flex flex-col bg-bg;
+}
+
+.designSystem__listingBody {
+  @apply grid gap-6 px-[var(--container-pad)] py-8 lg:grid-cols-[minmax(16rem,18rem)_1fr];
+}
+
+.designSystem__listingResults {
+  @apply flex min-w-0 flex-col gap-6;
+}
+
+.designSystem__dashboardDemo {
+  @apply min-h-[22rem];
+}
+
+.designSystem__dashboardBody {
+  @apply flex flex-col gap-3 text-sm text-text-muted;
+}
+
+.designSystem__layoutPreview {
+  @apply overflow-hidden rounded-lg border border-border;
+}
+
+.designSystem__layoutPreviewSolid {
+  @apply relative z-0;
+}
+
+.designSystem__layoutPreviewFloating {
+  @apply relative min-h-40 bg-surface-sunken;
+}
+
+.designSystem__footerPreview {
+  @apply overflow-hidden rounded-lg;
+}

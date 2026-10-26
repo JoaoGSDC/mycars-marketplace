@@ -1,0 +1,29 @@
+@reference "../../../../styles/index.css";
+
+.storeBadge {
+  @apply flex min-w-0 items-center gap-3;
+}
+
+.storeBadge--compact {
+  @apply gap-2;
+}
+
+.storeBadge__avatar {
+  @apply size-9;
+}
+
+.storeBadge__initials {
+  @apply text-xs font-semibold uppercase text-text-muted;
+}
+
+.storeBadge__text {
+  @apply flex min-w-0 flex-col;
+}
+
+.storeBadge__name {
+  @apply truncate text-sm font-medium text-text;
+}
+
+.storeBadge__city {
+  @apply truncate text-xs text-text-muted;
+}

@@ -1,0 +1,36 @@
+---
+description: Tipos compartilhados (@app-types) vs validators server (Zod)
+globs: src/shared/types/**/*.ts,src/server/**/*.validators.ts,src/server/**/*.types.ts
+alwaysApply: false
+---
+
+# Tipos e validação
+
+## `@app-types/*` (`src/shared/types/`)
+
+- Interfaces/DTOs usados por **frontend e backend**.
+- Constantes de domínio sem Zod (ex.: `BOT_COMMAND_ADVANCED_DEFAULTS` em `bot-command-dto.ts`).
+- Helpers isomórficos ficam em `@utils/*`, não aqui.
+
+## Server-only
+
+| Artefato | Local |
+|----------|--------|
+| Schemas Zod | `server/{dominio}/*.validators.ts` |
+| parse/serialize JSON | `server/bot/command-*-effect.ts` etc. |
+| Shims legados | `server/{dominio}/*.types.ts` → reexport `@app-types` |
+
+## Ao mover tipo do server para o front
+
+1. Criar/atualizar `src/shared/types/{nome}.ts`
+2. Shim em `server/{dominio}/*.types.ts`: `export * from "@app-types/..."`
+3. Atualizar imports em `features/` e `shared/` para `@app-types`
+4. Manter Zod no server
+
+## Service results
+
+```ts
+import { serviceSuccess, serviceError, type ServiceResult } from "@server/shared/service-result";
+```
+
+Controllers mapeiam `ServiceResult` para `jsonSuccess` / `jsonError`.

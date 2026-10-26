@@ -1,0 +1,29 @@
+@reference "../../../../styles/index.css";
+
+.filterSidebar {
+  @apply flex flex-col gap-4;
+}
+
+.filterSidebar--desktop {
+  @apply hidden w-full max-w-xs shrink-0 lg:flex;
+}
+
+.filterSidebar--mobile {
+  @apply lg:hidden;
+}
+
+.filterSidebar__stack {
+  @apply flex flex-col gap-4;
+}
+
+.filterSidebar__clearAll {
+  @apply w-full border-accent-strong text-accent-strong hover:bg-accent-soft;
+}
+
+.filterSidebar__mobileTrigger {
+  @apply inline-flex h-11 w-full items-center justify-center gap-2 rounded-md border border-border bg-transparent px-5 text-sm font-semibold uppercase tracking-[0.06em] text-text transition-colors hover:bg-surface-sunken;
+}
+
+.filterSidebar__drawer {
+  @apply max-w-md;
+}

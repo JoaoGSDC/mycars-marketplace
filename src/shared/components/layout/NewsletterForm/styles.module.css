@@ -1,0 +1,22 @@
+@reference "../../../../styles/index.css";
+
+.newsletterForm {
+  @apply flex w-full max-w-md items-stretch gap-2;
+}
+
+.newsletterForm__field {
+  @apply flex min-w-0 flex-1;
+}
+
+.newsletterForm__input {
+  @apply h-11 w-full rounded-full border border-border bg-surface-sunken px-5 text-sm text-text placeholder:text-text-subtle;
+  @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-strong;
+}
+
+.newsletterForm__submit {
+  @apply !size-11 shrink-0 !rounded-full;
+}
+
+.newsletterForm__srOnly {
+  @apply sr-only;
+}

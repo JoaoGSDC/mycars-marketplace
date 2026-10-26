@@ -1,0 +1,29 @@
+@reference "../../../../styles/index.css";
+
+.homeNewsletter {
+  @apply bg-bg !pb-8 !pt-12 md:!pb-10 md:!pt-14;
+}
+
+.homeNewsletter__inner {
+  @apply mx-auto flex max-w-xl flex-col items-center gap-6 text-center;
+}
+
+.homeNewsletter__title {
+  @apply text-[length:var(--text-h2)] font-semibold tracking-tight text-text;
+}
+
+.homeNewsletter__form {
+  @apply w-full max-w-md;
+}
+
+.homeNewsletter__message {
+  @apply text-sm text-text-muted;
+}
+
+.homeNewsletter__consent {
+  @apply max-w-md text-xs text-text-subtle;
+}
+
+.homeNewsletter__privacy {
+  @apply text-accent-strong underline-offset-2 hover:underline;
+}

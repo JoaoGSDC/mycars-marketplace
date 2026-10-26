@@ -1,0 +1,49 @@
+@reference "../../../../styles/index.css";
+
+.storefrontAbout {
+  @apply w-full border-t border-border bg-surface;
+}
+
+.storefrontAbout__inner {
+  @apply mx-auto flex w-full max-w-[var(--container-max)] flex-col gap-4 px-[var(--container-pad)] py-7 md:py-8;
+}
+
+.storefrontAbout__title {
+  @apply !text-[length:var(--text-h3)];
+}
+
+.storefrontAbout__body {
+  @apply max-w-2xl text-sm leading-relaxed text-text-muted md:text-base md:leading-relaxed;
+}
+
+.storefrontAbout__facts {
+  @apply grid gap-5 sm:grid-cols-2 lg:grid-cols-3;
+}
+
+.storefrontAbout__fact {
+  @apply flex gap-3;
+}
+
+.storefrontAbout__icon {
+  @apply mt-0.5 size-4 shrink-0 text-[var(--storefront-accent,var(--color-accent-strong))];
+}
+
+.storefrontAbout__label {
+  @apply mb-1 text-xs font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-text-subtle;
+}
+
+.storefrontAbout__value {
+  @apply text-sm leading-snug text-text;
+}
+
+.storefrontAbout__hours {
+  @apply flex flex-col gap-0.5 text-sm text-text;
+}
+
+.storefrontAbout__contact {
+  @apply flex flex-col gap-1 text-sm;
+}
+
+.storefrontAbout__contact a {
+  @apply inline-flex items-center gap-1 font-medium text-text underline-offset-2 transition-colors hover:text-[var(--storefront-accent,var(--color-accent-strong))] hover:underline;
+}

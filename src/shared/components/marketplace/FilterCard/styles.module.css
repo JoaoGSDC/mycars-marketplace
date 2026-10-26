@@ -1,0 +1,29 @@
+@reference "../../../../styles/index.css";
+
+.filterCard {
+  @apply overflow-hidden rounded-md border border-border bg-surface p-4;
+}
+
+.filterCard--section {
+  @apply rounded-none border-0 border-b border-border bg-transparent p-0 pb-5 last:border-b-0 last:pb-0;
+}
+
+.filterCard__header {
+  @apply mb-3 flex items-center justify-between gap-2;
+}
+
+.filterCard--section .filterCard__header {
+  @apply mb-2.5;
+}
+
+.filterCard__title {
+  @apply text-sm font-semibold text-text;
+}
+
+.filterCard__clear {
+  @apply text-xs font-medium text-accent-strong transition-colors hover:text-accent-button;
+}
+
+.filterCard__body {
+  @apply flex flex-col gap-3;
+}

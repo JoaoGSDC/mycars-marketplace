@@ -1,0 +1,44 @@
+@reference "../../styles/index.css";
+
+.authShell {
+  @apply relative flex min-h-full flex-1 flex-col items-center justify-center px-4 py-12;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -20%, color-mix(in oklab, var(--color-accent) 12%, transparent), transparent),
+    var(--color-bg);
+}
+
+.authShell__card {
+  @apply w-full max-w-md rounded-xl border border-border bg-surface p-6 shadow-sm sm:p-8;
+}
+
+.authShell__brand {
+  @apply mb-6 flex flex-col items-center gap-2 text-center;
+}
+
+.authShell__title {
+  @apply text-2xl font-semibold tracking-tight text-text;
+}
+
+.authShell__subtitle {
+  @apply text-sm text-text-muted;
+}
+
+.authShell__form {
+  @apply flex flex-col gap-4;
+}
+
+.authShell__actions {
+  @apply flex flex-col gap-3 pt-2;
+}
+
+.authShell__footer {
+  @apply mt-6 text-center text-sm text-text-muted;
+}
+
+.authShell__link {
+  @apply font-medium text-accent-strong underline-offset-4 hover:underline;
+}
+
+.authShell__error {
+  @apply rounded-md border border-error-fg/20 bg-error-bg px-3 py-2 text-sm text-error-fg;
+}

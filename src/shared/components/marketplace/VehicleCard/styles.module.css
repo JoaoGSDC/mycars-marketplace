@@ -1,0 +1,261 @@
+@reference "../../../../styles/index.css";
+
+.vehicleCard__link {
+  @apply block no-underline transition-opacity duration-200 hover:opacity-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-strong focus-visible:ring-offset-2;
+}
+
+.vehicleCard {
+  @apply relative flex flex-col gap-3;
+}
+
+.vehicleCard--compact {
+  @apply gap-2 rounded-lg bg-surface p-3 shadow-card;
+}
+
+.vehicleCard__compactMedia {
+  @apply relative;
+}
+
+.vehicleCard__compactImage {
+  @apply aspect-[16/10] w-full overflow-hidden rounded-md;
+}
+
+.vehicleCard__compactImage.vehicleCard__media {
+  @apply aspect-[16/10];
+}
+
+.vehicleCard__compactHead {
+  @apply flex flex-col gap-0.5;
+}
+
+.vehicleCard__compactTitleLink {
+  @apply no-underline hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-strong focus-visible:ring-offset-2;
+}
+
+.vehicleCard__compactTitle {
+  @apply line-clamp-2 text-sm font-semibold leading-snug text-text;
+}
+
+.vehicleCard__compactActions {
+  @apply pt-1;
+}
+
+/* —— Grid (ref-b listing vertical) —— */
+.vehicleCard--grid {
+  @apply h-full overflow-hidden rounded-md border border-border bg-surface shadow-card;
+  gap: 0;
+}
+
+.vehicleCard__gridMediaWrap {
+  @apply relative;
+}
+
+.vehicleCard__gridImage {
+  @apply aspect-[16/10] rounded-none;
+}
+
+.vehicleCard__gridImage.vehicleCard__media {
+  @apply aspect-[16/10] rounded-none;
+}
+
+.vehicleCard__gridBody {
+  @apply flex flex-1 flex-col gap-2.5 p-4;
+}
+
+.vehicleCard__gridHead {
+  @apply flex flex-col gap-1;
+}
+
+.vehicleCard__gridTitleLink {
+  @apply min-w-0 no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-strong focus-visible:ring-offset-2;
+}
+
+.vehicleCard__gridTitle {
+  @apply line-clamp-2 text-base font-semibold leading-snug tracking-tight text-text;
+}
+
+.vehicleCard__gridPrice {
+  @apply text-lg font-bold tabular-nums text-accent-strong;
+}
+
+.vehicleCard__specsBar {
+  @apply w-full;
+}
+
+.vehicleCard__gridActions {
+  @apply mt-auto flex items-center gap-2 pt-1;
+}
+
+.vehicleCard--offer {
+  @apply border-2 border-accent;
+}
+
+/* —— Listing: card horizontal (mobile e desktop) —— */
+.vehicleCard--listing {
+  @apply flex flex-row items-stretch gap-3 overflow-hidden rounded-md border border-border bg-surface p-2.5 shadow-card sm:gap-5 sm:p-5;
+}
+
+.vehicleCard__listingMedia {
+  @apply relative w-[38%] max-w-[9.5rem] shrink-0 overflow-hidden rounded-md sm:w-auto sm:max-w-none sm:min-w-0 sm:flex-1 sm:basis-0;
+}
+
+.vehicleCard__listingImage {
+  @apply aspect-[4/5] h-full min-h-[7.5rem] w-full sm:aspect-auto sm:min-h-[14rem];
+}
+
+.vehicleCard__listingImage.vehicleCard__media {
+  @apply aspect-[4/5] h-full sm:aspect-auto;
+}
+
+.vehicleCard__listingBody {
+  @apply flex min-w-0 flex-1 flex-col gap-1.5 py-0.5 sm:gap-3 sm:basis-0;
+}
+
+.vehicleCard__priceBlock {
+  @apply flex shrink-0 flex-col items-start gap-0.5 sm:items-end sm:text-right;
+}
+
+.vehicleCard__previousPrice {
+  @apply text-sm text-text-muted line-through;
+}
+
+.vehicleCard__detailsBtn {
+  @apply flex-1 !bg-accent-button !text-white hover:!bg-accent-button-hover;
+}
+
+.vehicleCard__iconLink {
+  @apply inline-flex size-9 shrink-0 items-center justify-center rounded-md border border-border text-text transition-colors hover:bg-surface-sunken focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-strong focus-visible:ring-offset-2;
+}
+
+/* —— Featured horizontal (ref-b wide) —— */
+.vehicleCard--featured {
+  @apply flex flex-col gap-0 overflow-hidden p-0 sm:flex-row;
+}
+
+.vehicleCard--reserved {
+  @apply opacity-95;
+}
+
+.vehicleCard--reserved .vehicleCard__gridMediaWrap::after {
+  @apply pointer-events-none absolute inset-0 bg-ink/15 content-[''];
+}
+
+.vehicleCard__media {
+  @apply relative aspect-[4/3] w-full overflow-hidden rounded-lg bg-surface-sunken;
+}
+
+.vehicleCard__photo {
+  @apply object-cover;
+}
+
+.vehicleCard__conditionBadge {
+  @apply absolute left-3 top-3;
+}
+
+.vehicleCard__reserved {
+  @apply absolute inset-0 flex items-start justify-end p-3;
+}
+
+.vehicleCard__price {
+  @apply text-lg font-bold text-accent-strong;
+}
+
+.vehicleCard__title {
+  @apply flex flex-col gap-0.5 text-sm leading-snug text-text;
+}
+
+.vehicleCard__titleMain {
+  @apply font-semibold;
+}
+
+.vehicleCard__titleMeta {
+  @apply text-xs text-text-muted;
+}
+
+.vehicleCard__specs {
+  @apply grid grid-cols-2 gap-1.5 sm:grid-cols-4;
+}
+
+.vehicleCard__spec {
+  @apply flex min-w-0 flex-col items-center gap-0.5 rounded-md bg-surface-sunken px-1.5 py-2 text-center text-[length:var(--text-caption)] text-text-muted;
+}
+
+.vehicleCard__specIcon {
+  @apply shrink-0 text-ink-muted;
+}
+
+.vehicleCard__listingHead {
+  @apply flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between sm:gap-4;
+}
+
+.vehicleCard__listingTitle {
+  @apply line-clamp-2 text-sm font-semibold leading-snug text-text sm:text-base md:text-lg;
+}
+
+.vehicleCard__listingPrice {
+  @apply text-base font-bold tabular-nums text-accent-strong sm:text-lg;
+}
+
+.vehicleCard__chips {
+  @apply pointer-events-none;
+}
+
+.vehicleCard__chip {
+  @apply cursor-default text-xs;
+}
+
+.vehicleCard__location {
+  @apply flex items-center gap-1.5 text-sm font-medium text-text-muted;
+}
+
+.vehicleCard__description {
+  @apply line-clamp-2 text-sm leading-snug text-text-subtle;
+}
+
+.vehicleCard__status {
+  @apply self-start;
+}
+
+.vehicleCard__listingActions {
+  @apply mt-auto flex items-center gap-2 pt-1 sm:pt-2;
+}
+
+.vehicleCard__listingSpecs {
+  @apply hidden sm:block;
+}
+
+.vehicleCard__listingMeta {
+  @apply line-clamp-1 text-xs text-text-muted sm:text-sm;
+}
+
+.vehicleCard__listingDesc {
+  @apply hidden sm:line-clamp-2;
+}
+
+.vehicleCard__featuredMedia {
+  @apply relative shrink-0 overflow-hidden sm:w-[44%];
+}
+
+.vehicleCard__featuredImage {
+  @apply min-h-[200px] rounded-none sm:h-full sm:min-h-full;
+}
+
+.vehicleCard__featuredImage.vehicleCard__media {
+  @apply aspect-[16/10] h-full min-h-[200px] sm:aspect-auto;
+}
+
+.vehicleCard__offerBadge {
+  @apply absolute left-3 top-3 z-[1];
+}
+
+.vehicleCard__featuredBody {
+  @apply flex flex-1 flex-col gap-3 p-5 md:gap-4 md:p-6;
+}
+
+.vehicleCard__featuredHead {
+  @apply flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between;
+}
+
+.vehicleCard__featuredPrice {
+  @apply shrink-0 rounded-full bg-accent-button px-3 py-1.5 text-sm font-bold tabular-nums text-white;
+}

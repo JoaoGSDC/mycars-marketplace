@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Open Graph placeholder">
+  <rect width="1200" height="630" fill="#0F0F0F"/>
+  <rect x="80" y="80" width="1040" height="470" rx="24" fill="#1A1A1A"/>
+  <text x="120" y="340" fill="#F04E1F" font-family="system-ui,sans-serif" font-size="72" font-weight="700">MyCars</text>
+  <text x="120" y="410" fill="#A8A8A2" font-family="system-ui,sans-serif" font-size="32">Marketplace de veículos</text>
+</svg>

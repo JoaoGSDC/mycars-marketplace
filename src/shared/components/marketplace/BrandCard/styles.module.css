@@ -1,0 +1,33 @@
+@reference "../../../../styles/index.css";
+
+.brandCard {
+  @apply flex h-full min-h-[280px] flex-col justify-between gap-6 rounded-xl bg-ink p-6 text-inverse;
+}
+
+.brandCard__top {
+  @apply flex flex-wrap items-center gap-3;
+}
+
+.brandCard__initials {
+  @apply flex size-12 items-center justify-center rounded-full bg-white/10 text-sm font-bold uppercase;
+}
+
+.brandCard__badge {
+  @apply rounded-full bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.06em] text-inverse;
+}
+
+.brandCard__body {
+  @apply flex flex-col gap-2;
+}
+
+.brandCard__name {
+  @apply text-xl font-semibold tracking-tight;
+}
+
+.brandCard__description {
+  @apply text-sm leading-snug text-white/75;
+}
+
+.brandCard__count {
+  @apply text-sm text-white/70;
+}

@@ -1,0 +1,9 @@
+@reference "../../../../styles/index.css";
+
+.homeCategories {
+  @apply flex flex-col gap-2;
+}
+
+.homeCategories__header {
+  @apply mb-8;
+}

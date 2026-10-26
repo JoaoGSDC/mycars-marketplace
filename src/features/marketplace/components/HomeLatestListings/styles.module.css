@@ -1,0 +1,17 @@
+@reference "../../../../styles/index.css";
+
+.homeLatest {
+  @apply flex flex-col gap-10;
+}
+
+.homeLatest__grid {
+  @apply grid gap-6 sm:grid-cols-2 xl:grid-cols-3;
+}
+
+.homeLatest__footer {
+  @apply flex justify-center;
+}
+
+.homeLatest__seeAll {
+  @apply !text-white;
+}

@@ -1,0 +1,7 @@
+@import 'tailwindcss';
+@import './theme/_tokens.css';
+@import './base/_reset.css';
+@import './base/_typography.css';
+@import './base/_scrollbar.css';
+@import './layout/_container.css';
+@import './state/_states.css';

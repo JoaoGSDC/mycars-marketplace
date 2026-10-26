@@ -1,0 +1,14 @@
+@reference "../../../../styles/index.css";
+
+.bigWordmark {
+  @apply w-full overflow-hidden select-none;
+}
+
+.bigWordmark__text {
+  @apply w-full text-center font-bold uppercase leading-none tracking-tighter text-text;
+  font-size: clamp(4rem, 18vw, 12rem);
+}
+
+.bigWordmark__accent {
+  @apply text-accent-strong;
+}

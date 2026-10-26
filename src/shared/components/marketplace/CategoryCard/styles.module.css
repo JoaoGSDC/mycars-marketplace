@@ -1,0 +1,33 @@
+@reference "../../../../styles/index.css";
+
+.categoryCard__link {
+  @apply block no-underline transition-opacity duration-200 hover:opacity-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-strong focus-visible:ring-offset-2;
+}
+
+.categoryCard {
+  @apply flex min-w-[200px] flex-col overflow-hidden rounded-lg border border-border bg-surface shadow-card;
+}
+
+.categoryCard__media {
+  @apply relative aspect-[3/4] w-full overflow-hidden bg-surface-sunken;
+}
+
+.categoryCard__image {
+  @apply size-full object-cover;
+}
+
+.categoryCard__placeholder {
+  @apply h-full rounded-none;
+}
+
+.categoryCard__body {
+  @apply flex flex-col gap-1 p-4;
+}
+
+.categoryCard__label {
+  @apply text-base font-semibold text-text;
+}
+
+.categoryCard__count {
+  @apply text-sm text-text-muted;
+}

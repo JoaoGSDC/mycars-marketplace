@@ -1,0 +1,77 @@
+@reference "../../styles/index.css";
+
+.admin {
+  @apply flex flex-col gap-6;
+}
+
+.admin__header {
+  @apply flex flex-col gap-2 lg:flex-row lg:items-end lg:justify-between;
+}
+
+.admin__title {
+  @apply text-2xl font-semibold tracking-tight text-text;
+}
+
+.admin__subtitle {
+  @apply text-sm text-text-muted;
+}
+
+.admin__filters {
+  @apply flex flex-wrap items-end gap-3;
+}
+
+.admin__grid {
+  @apply grid gap-3 sm:grid-cols-2 xl:grid-cols-4;
+}
+
+.admin__stat {
+  @apply flex flex-col gap-1 rounded-lg border border-border bg-surface p-4;
+}
+
+.admin__statLabel {
+  @apply text-xs font-medium uppercase tracking-[0.06em] text-text-muted;
+}
+
+.admin__statValue {
+  @apply text-2xl font-semibold tabular-nums text-text;
+}
+
+.admin__table {
+  @apply w-full overflow-x-auto rounded-lg border border-border bg-surface;
+}
+
+.admin__table table {
+  @apply w-full min-w-[640px] border-collapse text-left text-sm;
+}
+
+.admin__table th {
+  @apply border-b border-border px-3 py-2 font-medium text-text-muted;
+}
+
+.admin__table td {
+  @apply border-b border-border px-3 py-2 text-text;
+}
+
+.admin__rowLink {
+  @apply font-medium text-accent-strong underline-offset-2 hover:underline;
+}
+
+.admin__panel {
+  @apply flex flex-col gap-3 rounded-lg border border-border bg-surface p-4;
+}
+
+.admin__actions {
+  @apply flex flex-wrap gap-2;
+}
+
+.admin__empty {
+  @apply rounded-lg border border-dashed border-border bg-surface-sunken px-4 py-8 text-center text-sm text-text-muted;
+}
+
+.admin__meta {
+  @apply text-sm text-text-muted;
+}
+
+.admin__hint {
+  @apply text-xs text-text-subtle;
+}

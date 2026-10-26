@@ -1,0 +1,78 @@
+---
+description: Frontend — features, services, páginas admin e componentes
+globs: src/features/**/*.{ts,tsx},src/shared/services/**/*.{ts,tsx},src/app/admin/**/*.{ts,tsx},src/shared/components/**/*.{ts,tsx}
+alwaysApply: false
+---
+
+# Frontend — Feature First
+
+## Estrutura por domínio (`src/features/{dominio}/`)
+
+- `{Dominio}View.tsx` — view principal (`"use client"` quando necessário)
+- `hooks/use*.ts` — React Query, estado, handlers
+- `components/` — só usados neste domínio
+- `index.ts` — exports públicos
+
+## Páginas admin
+
+```tsx
+// src/app/admin/bot/commands/page.tsx
+import { BotCommandsView } from "@features/bot";
+export default BotCommandsView;
+```
+
+Sem lógica de negócio na page — delegar à feature.
+
+## HTTP client
+
+- URLs em `src/shared/services/paths.ts` (`ENDPOINTS.Internal`, `ENDPOINTS.Bff`).
+- Métodos em `shared/services/entities/{dominio}.services.ts`.
+- Consumir via `import { services } from "@services"`.
+
+## Tipos
+
+- DTOs compartilhados: `@app-types/{dominio}`.
+- Helpers puros: `@utils/*` (ex.: effects do bot).
+- **Proibido**: `@server/*`, `@lib/*` com DB, imports de `@/lib/twitch-api` (removido).
+
+## UI
+
+- shadcn: `@/components/ui/*`
+- Admin compartilhado: `@components/admin/*`
+- Estilos: Tailwind + CSS Modules BEM — ver `project-standards-nextjs.md`
+
+## Componentes globais vs locais
+
+- Usado em 1 feature → `features/{dominio}/components/`
+- Usado em 2+ features → `shared/components/{dominio}/`
+
+## Estrutura `shared/components/{dominio}/` (espelha features, sem View/Provider)
+
+```
+store/
+├── components/
+│   └── StoreWalletBar/
+│       ├── index.tsx              # componente principal (nunca StoreWalletBar.tsx)
+│       ├── storeWalletBar.types.ts   # opcional
+│       ├── storeWalletBar.constants.ts
+│       └── styles.module.css
+├── hooks/                         # hooks do domínio — use-{nome}.hook.ts
+├── types/                         # interfaces/types compartilhados no domínio
+├── constants/                     # constantes do domínio
+├── utils/                         # helpers puros (opcional, ex.: admin/kanban)
+├── index.ts                       # barrel público
+```
+
+Exceções:
+
+- `ui/` — shadcn atômico (sem BEM module por componente)
+- `modules/` — aliases legados (kebab-case + `index.tsx`)
+- `admin/AdminProvider/` — contexto (fica na raiz do domínio, `index.tsx`)
+
+Imports:
+
+```tsx
+import { StoreWalletBar } from "@components/store/components/StoreWalletBar";
+// ou via barrel:
+import { StoreWalletBar } from "@components/store";
+```

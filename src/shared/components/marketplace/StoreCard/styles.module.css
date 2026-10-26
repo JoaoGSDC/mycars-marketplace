@@ -1,0 +1,84 @@
+@reference "../../../../styles/index.css";
+
+.storeCard__link {
+  @apply block h-full no-underline transition-[transform,opacity] duration-200 hover:opacity-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-strong focus-visible:ring-offset-2;
+}
+
+.storeCard__link:hover .storeCard {
+  @apply border-accent-strong/25 shadow-popover;
+}
+
+.storeCard__link:hover .storeCard__cta {
+  @apply bg-accent-button-hover;
+}
+
+.storeCard {
+  @apply flex h-full flex-col overflow-hidden rounded-md border border-border bg-surface shadow-card;
+}
+
+.storeCard__cover {
+  @apply relative aspect-[2/1] w-full overflow-hidden bg-ink;
+}
+
+.storeCard__coverImage {
+  @apply object-cover;
+}
+
+.storeCard__coverFallback {
+  @apply absolute inset-0 flex items-end bg-ink p-4;
+  background-image:
+    linear-gradient(135deg, rgb(240 78 31 / 0.35) 0%, transparent 42%),
+    linear-gradient(180deg, transparent 40%, rgb(17 17 17 / 0.9) 100%);
+}
+
+.storeCard__coverFallbackMark {
+  @apply text-xs font-semibold uppercase tracking-[var(--tracking-eyebrow)] text-white/55;
+}
+
+.storeCard__logo {
+  @apply absolute -bottom-5 left-4 size-14 border-4 border-surface shadow-card;
+}
+
+.storeCard__logoInitials {
+  @apply text-sm font-semibold uppercase text-text-muted;
+}
+
+.storeCard__body {
+  @apply flex flex-1 flex-col gap-3 px-4 pb-4 pt-8;
+}
+
+.storeCard__identity {
+  @apply flex flex-col gap-1.5;
+}
+
+.storeCard__nameRow {
+  @apply flex flex-wrap items-center gap-2;
+}
+
+.storeCard__name {
+  @apply text-base font-semibold tracking-tight text-text;
+}
+
+.storeCard__verified {
+  @apply shrink-0 text-[10px] uppercase tracking-wide;
+}
+
+.storeCard__location {
+  @apply flex items-center gap-1.5 text-sm text-text-muted;
+}
+
+.storeCard__locationIcon {
+  @apply shrink-0 text-text-subtle;
+}
+
+.storeCard__count {
+  @apply text-sm font-medium text-text;
+}
+
+.storeCard__cta {
+  @apply mt-auto inline-flex w-fit items-center gap-1.5 rounded-md bg-accent-button px-3 py-2 text-sm font-semibold text-white transition-colors;
+}
+
+.storeCard__ctaArrow {
+  @apply text-white/90;
+}

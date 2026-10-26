@@ -1,0 +1,17 @@
+@reference "../../styles/index.css";
+
+.module {
+  @apply flex flex-col gap-4;
+}
+
+.module__header {
+  @apply flex flex-col gap-1;
+}
+
+.module__title {
+  @apply text-xl font-semibold tracking-tight text-text;
+}
+
+.module__description {
+  @apply text-sm text-text-muted;
+}

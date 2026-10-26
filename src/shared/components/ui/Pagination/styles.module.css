@@ -1,0 +1,30 @@
+@reference "../../../../styles/index.css";
+
+.pagination {
+  @apply flex items-center justify-center gap-1;
+}
+
+.pagination__control {
+  @apply inline-flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-text hover:bg-surface-sunken;
+}
+
+.pagination__control--disabled {
+  @apply pointer-events-none opacity-50;
+}
+
+.pagination__list {
+  @apply flex items-center gap-1;
+}
+
+.pagination__ellipsis {
+  @apply px-2 text-sm text-text-muted;
+}
+
+.pagination__page {
+  @apply inline-flex min-w-9 items-center justify-center rounded-md px-3 py-2 text-sm font-medium text-text transition-colors hover:bg-surface-sunken;
+}
+
+.pagination__page--active {
+  @apply bg-accent-button;
+  color: #ffffff !important;
+}

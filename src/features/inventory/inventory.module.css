@@ -1,0 +1,397 @@
+@reference "../../styles/index.css";
+
+.inventory {
+  @apply flex flex-col gap-6;
+}
+
+.inventory__meta {
+  @apply text-xs text-text-muted;
+}
+
+.inventory__statusSelect {
+  @apply !w-auto min-w-0;
+}
+
+.inventory__statusTrigger {
+  @apply !h-8 !w-auto min-h-8 gap-1.5 rounded-full border-0 px-3 py-1.5 text-xs font-medium shadow-none focus-visible:ring-2;
+}
+
+.inventory__statusTriggerIcon {
+  @apply !size-3.5 opacity-70;
+}
+
+.inventory__confirmDialog {
+  @apply !max-w-sm gap-0 p-5;
+}
+
+.inventory__confirmHeader {
+  @apply gap-1.5 pr-10;
+}
+
+.inventory__confirmTitle {
+  @apply !text-base;
+}
+
+.inventory__confirmFooter {
+  @apply mt-5 gap-2;
+}
+
+.inventory__statusTriggerSuccess {
+  @apply !bg-success-bg !text-success-fg;
+}
+
+.inventory__statusTriggerWarning {
+  @apply !bg-warning-bg !text-warning-fg;
+}
+
+.inventory__statusTriggerInfo {
+  @apply !bg-info-bg !text-info-fg;
+}
+
+.inventory__statusTriggerNeutral {
+  @apply !bg-surface-sunken !text-text-muted;
+}
+
+.inventory__statusTriggerError {
+  @apply !bg-error-bg !text-error-fg;
+}
+
+.inventory__wizard {
+  @apply flex flex-col gap-6;
+}
+
+.inventory__formGrid {
+  @apply grid gap-4 sm:grid-cols-2;
+}
+
+.inventory__formFull {
+  @apply sm:col-span-2;
+}
+
+.inventory__sectionText {
+  @apply text-sm text-text-muted;
+}
+
+.inventory__notice {
+  @apply rounded-md border border-border bg-info-bg px-4 py-3 text-sm text-info-fg;
+}
+
+.inventory__alert {
+  @apply rounded-md border border-error-fg/20 bg-error-bg px-4 py-3 text-sm text-error-fg;
+}
+
+.inventory__summaryBadge {
+  @apply inline-flex rounded-md border border-border bg-surface-sunken px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-text-muted;
+}
+
+.inventory__details {
+  @apply rounded-md border border-border bg-surface-sunken/40 px-3 py-2;
+}
+
+.inventory__details summary {
+  @apply cursor-pointer list-none text-sm font-medium text-text marker:content-none;
+}
+
+.inventory__details summary::-webkit-details-marker {
+  display: none;
+}
+
+.inventory__details[open] summary {
+  @apply mb-3;
+}
+
+.inventory__textarea {
+  @apply w-full rounded-md border border-border bg-surface-sunken px-3 py-2.5 text-sm text-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-strong;
+}
+
+.inventory__review {
+  @apply flex flex-col gap-3;
+}
+
+.inventory__reviewBlock {
+  @apply rounded-md border border-border bg-surface px-3 py-3;
+}
+
+.inventory__reviewHead {
+  @apply mb-2 flex items-center justify-between gap-2;
+}
+
+.inventory__reviewHead h3 {
+  @apply text-sm font-semibold text-text;
+}
+
+.inventory__reviewBlock ul {
+  @apply list-disc space-y-1 pl-4 text-sm text-text-muted;
+}
+
+.inventory__reviewPending {
+  @apply rounded-md border border-warning-fg/20 bg-warning-bg px-3 py-3 text-sm text-warning-fg;
+}
+
+.inventory__reviewPendingTitle {
+  @apply mb-1 font-medium;
+}
+
+.inventory__reviewPending ul {
+  @apply mb-2 list-disc space-y-1 pl-4;
+}
+.inventory__actions {
+  @apply flex flex-wrap gap-2;
+}
+
+.inventory__costList {
+  @apply flex flex-col gap-2;
+}
+
+.inventory__costItem {
+  @apply flex flex-wrap items-center justify-between gap-2 rounded-md border border-border bg-surface-sunken px-3 py-2 text-sm;
+}
+
+/* —— Ficha operacional —— */
+
+.detail__card {
+  @apply overflow-hidden;
+}
+
+/** Card de anúncio preenche a aba até o bottom. */
+.detail__cardAnuncio {
+  @apply flex min-h-0 flex-1 flex-col overflow-visible;
+}
+
+.detail__cardAnuncioContent {
+  @apply flex min-h-0 flex-1 flex-col;
+}
+
+.detail__cardHeader {
+  @apply gap-2 p-4 pb-0 sm:p-5 sm:pb-0;
+}
+
+.detail__cardHeading {
+  @apply flex flex-wrap items-start justify-between gap-2;
+}
+
+.detail__cardTitle {
+  @apply !text-base;
+}
+
+.detail__cardDescription {
+  @apply text-sm text-text-muted;
+}
+
+.detail__cardContent {
+  @apply p-4 pt-3 sm:p-5 sm:pt-3;
+}
+
+.detail__headerMeta {
+  @apply flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-text-muted;
+}
+
+.detail__headerMeta > span:not(:last-child)::after {
+  content: '·';
+  @apply ml-2 text-text-subtle;
+}
+
+.detail__chipMuted {
+  @apply inline-flex items-center rounded-md border border-border bg-surface-sunken px-2 py-0.5 text-xs font-medium text-text-muted;
+}
+
+.detail__moreBtn {
+  @apply gap-1.5;
+}
+
+.detail__tabs {
+  @apply gap-4;
+}
+
+.detail__tabBody {
+  @apply mt-2;
+}
+
+/** Aba Anúncio: card preenche até o fim da viewport (respeitando chrome do painel). */
+.detail__tabBodyAnuncio {
+  @apply mt-2 flex min-h-[calc(100svh-13.5rem)] flex-col data-[state=inactive]:hidden md:min-h-[calc(100svh-14.5rem)];
+}
+
+.detail__grid {
+  @apply grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(16rem,20rem)] lg:items-start;
+}
+
+.detail__main {
+  @apply flex min-w-0 flex-col gap-5;
+}
+
+.detail__side {
+  @apply flex min-w-0 flex-col gap-4 lg:sticky lg:top-4;
+}
+
+.detail__gallery {
+  @apply flex flex-col gap-3;
+}
+
+.detail__hero {
+  @apply block w-full overflow-hidden rounded-md border border-border bg-surface-sunken focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-strong;
+}
+
+.detail__heroImg {
+  @apply aspect-[16/10] w-full object-cover;
+}
+
+.detail__thumbs {
+  @apply flex gap-2 overflow-x-auto pb-1;
+}
+
+.detail__thumb {
+  @apply size-16 shrink-0 overflow-hidden rounded-md border border-border opacity-70 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-strong;
+}
+
+.detail__thumbActive {
+  @apply border-accent-strong opacity-100;
+}
+
+.detail__thumbImg {
+  @apply size-full object-cover;
+}
+
+.detail__emptyGallery {
+  @apply flex flex-col gap-3;
+}
+
+.detail__facts {
+  @apply grid gap-3 sm:grid-cols-2;
+}
+
+.detail__facts dt {
+  @apply text-xs uppercase tracking-wide text-text-subtle;
+}
+
+.detail__facts dd {
+  @apply text-sm text-text;
+}
+
+.detail__factWide {
+  @apply sm:col-span-2;
+}
+
+.detail__sideFacts {
+  @apply flex flex-col gap-3;
+}
+
+.detail__sideFacts dt {
+  @apply text-xs uppercase tracking-wide text-text-subtle;
+}
+
+.detail__sideFacts dd {
+  @apply text-sm text-text;
+}
+
+.detail__sideActions {
+  @apply flex flex-col gap-2;
+}
+
+.detail__sideEmpty {
+  @apply flex flex-col gap-3;
+}
+
+.detail__pendencies {
+  @apply list-disc space-y-1 pl-4 text-sm text-warning-fg;
+}
+
+.detail__costBody {
+  @apply flex flex-col gap-4;
+}
+
+.detail__costSummary {
+  @apply grid gap-3 sm:grid-cols-3;
+}
+
+.detail__costLabel {
+  @apply text-xs uppercase tracking-wide text-text-subtle;
+}
+
+.detail__costToolbar {
+  @apply flex flex-wrap gap-2;
+}
+
+.detail__history {
+  @apply flex flex-col gap-2;
+}
+
+.detail__historyItem {
+  @apply rounded-md border border-border bg-surface-sunken px-3 py-2 text-sm;
+}
+
+.detail__opsDrawer {
+  @apply max-w-md;
+}
+
+.detail__opsDrawerDesc {
+  @apply mt-1 text-sm text-text-muted;
+}
+
+.detail__opsPanel {
+  @apply flex flex-col gap-6;
+}
+
+.detail__opsSection {
+  @apply flex flex-col gap-3;
+}
+
+.detail__opsLabel {
+  @apply text-xs font-medium uppercase tracking-wide text-text-subtle;
+}
+
+.detail__opsHint {
+  @apply text-xs leading-relaxed text-text-muted;
+}
+
+.detail__opsMenu {
+  @apply overflow-hidden rounded-md border border-border;
+}
+
+.detail__opsMenu > li + li {
+  @apply border-t border-border;
+}
+
+.detail__opsMenuItem {
+  @apply flex w-full items-center gap-3 bg-surface px-3.5 py-3 text-left transition-colors hover:bg-surface-sunken focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-accent-strong disabled:pointer-events-none disabled:opacity-50;
+}
+
+.detail__opsMenuCopy {
+  @apply flex min-w-0 flex-1 flex-col gap-0.5;
+}
+
+.detail__opsMenuTitle {
+  @apply text-sm font-medium text-text;
+}
+
+.detail__opsMenuMeta {
+  @apply text-xs text-text-muted;
+}
+
+.detail__opsMenuChevron {
+  @apply size-4 shrink-0 text-text-subtle;
+}
+
+.inventory__statusField {
+  @apply w-full;
+}
+
+.inventory__statusFieldReadonly {
+  @apply flex flex-col gap-1.5;
+}
+
+.inventory__statusFieldLabel {
+  @apply text-sm font-medium text-text;
+}
+
+.detail__dialogActions {
+  @apply flex justify-end gap-2;
+}
+
+.detail__lightbox {
+  @apply max-w-3xl;
+}
+
+.detail__lightboxImg {
+  @apply mt-2 max-h-[70vh] w-full rounded-md object-contain;
+}

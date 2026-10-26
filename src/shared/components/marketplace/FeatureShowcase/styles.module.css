@@ -1,0 +1,49 @@
+@reference "../../../../styles/index.css";
+
+.featureShowcase {
+  @apply bg-bg py-16;
+}
+
+.featureShowcase__inner {
+  @apply mx-auto grid max-w-[var(--container-max)] gap-8 px-[var(--container-pad)] lg:grid-cols-2 lg:items-center;
+}
+
+.featureShowcase__card {
+  @apply flex flex-col gap-5 rounded-2xl bg-surface p-8 text-text shadow-card;
+}
+
+.featureShowcase__title {
+  @apply text-text;
+}
+
+.featureShowcase__description {
+  @apply text-text-muted;
+}
+
+.featureShowcase__stats {
+  @apply grid gap-6 pt-4 sm:grid-cols-3;
+}
+
+.featureShowcase__gallery {
+  @apply flex flex-col gap-4;
+}
+
+.featureShowcase__galleryHead {
+  @apply flex justify-end;
+}
+
+.featureShowcase__track {
+  @apply flex snap-x snap-mandatory overflow-x-auto scroll-smooth rounded-xl;
+}
+
+.featureShowcase__slide {
+  @apply w-full shrink-0 snap-center;
+}
+
+.featureShowcase__image {
+  @apply aspect-video w-full rounded-xl object-cover;
+}
+
+.featureShowcase__placeholder {
+  @apply w-full;
+}

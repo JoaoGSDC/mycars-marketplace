@@ -1,0 +1,117 @@
+@reference "../../styles/index.css";
+
+.dashboard {
+  @apply flex flex-col gap-8;
+}
+
+.dashboard__header {
+  @apply flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between;
+}
+
+.dashboard__title {
+  @apply text-2xl font-semibold tracking-tight text-text;
+}
+
+.dashboard__subtitle {
+  @apply text-sm text-text-muted;
+}
+
+.dashboard__filters {
+  @apply flex flex-wrap items-end gap-3;
+}
+
+.dashboard__section {
+  @apply flex flex-col gap-4;
+}
+
+.dashboard__kpiGrid {
+  @apply grid gap-3 sm:grid-cols-2 xl:grid-cols-3;
+}
+
+.dashboard__statGrid {
+  @apply grid gap-4 sm:grid-cols-2 lg:grid-cols-3;
+}
+
+.dashboard__stat {
+  @apply flex flex-col gap-1 rounded-lg border border-border bg-surface p-4;
+}
+
+.dashboard__statLabel {
+  @apply text-xs font-medium uppercase tracking-[0.06em] text-text-muted;
+}
+
+.dashboard__statValue {
+  @apply text-2xl font-semibold tabular-nums text-text;
+}
+
+.dashboard__statHint {
+  @apply text-xs text-text-subtle;
+}
+
+.dashboard__statLink {
+  @apply mt-2 text-sm font-medium text-accent-strong underline-offset-2 hover:underline;
+}
+
+.dashboard__panel {
+  @apply flex flex-col gap-4 rounded-lg border border-border bg-surface p-4;
+}
+
+.dashboard__panelTitle {
+  @apply text-sm font-semibold text-text;
+}
+
+.dashboard__bars {
+  @apply flex flex-col gap-3;
+}
+
+.dashboard__barRow {
+  @apply flex flex-col gap-1;
+}
+
+.dashboard__barMeta {
+  @apply flex items-center justify-between gap-3 text-sm;
+}
+
+.dashboard__barTrack {
+  @apply h-2 overflow-hidden rounded-full bg-border;
+}
+
+.dashboard__barFill {
+  @apply h-full rounded-full bg-accent-button;
+}
+
+.dashboard__series {
+  @apply grid grid-flow-col auto-cols-fr items-end gap-1 min-h-36;
+}
+
+.dashboard__seriesCol {
+  @apply flex flex-col items-center justify-end gap-1;
+}
+
+.dashboard__seriesBar {
+  @apply w-full min-h-1 rounded-sm bg-accent-button/80;
+}
+
+.dashboard__seriesLabel {
+  @apply text-[10px] tabular-nums text-text-subtle;
+}
+
+.dashboard__alert {
+  @apply rounded-lg border border-border bg-warning-bg px-4 py-3 text-sm text-warning-fg;
+}
+
+.dashboard__empty {
+  @apply rounded-lg border border-dashed border-border bg-surface-sunken px-4 py-8 text-center text-sm text-text-muted;
+}
+
+.dashboard__defs {
+  @apply flex flex-col gap-2 text-xs text-text-subtle;
+}
+
+.dashboard__defs details {
+  @apply rounded-md border border-border bg-surface px-3 py-2;
+}
+
+.dashboard__defs summary {
+  @apply cursor-pointer font-medium text-text-muted;
+}

@@ -1,0 +1,125 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1792596189732,
+      "tag": "0000_lucky_electro",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1792600000000,
+      "tag": "0001_auth_foundation",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1792601000000,
+      "tag": "0002_store_onboarding",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "6",
+      "when": 1792602000000,
+      "tag": "0003_vehicle_inventory",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "6",
+      "when": 1792603000000,
+      "tag": "0004_media_assets",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "6",
+      "when": 1792604000000,
+      "tag": "0005_listing_media_selection",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "6",
+      "when": 1792605000000,
+      "tag": "0006_vehicle_detail_leads",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "6",
+      "when": 1792606000000,
+      "tag": "0007_store_slug_redirects",
+      "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "6",
+      "when": 1792607000000,
+      "tag": "0008_crm_customers_opportunities",
+      "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "6",
+      "when": 1792608000000,
+      "tag": "0009_vehicle_reservations",
+      "breakpoints": true
+    },
+    {
+      "idx": 10,
+      "version": "6",
+      "when": 1792609000000,
+      "tag": "0010_vehicle_sales",
+      "breakpoints": true
+    },
+    {
+      "idx": 11,
+      "version": "6",
+      "when": 1792610000000,
+      "tag": "0011_platform_admin",
+      "breakpoints": true
+    },
+    {
+      "idx": 12,
+      "version": "6",
+      "when": 1792611000000,
+      "tag": "0012_integrity_privacy",
+      "breakpoints": true
+    },
+    {
+      "idx": 13,
+      "version": "6",
+      "when": 1792612000000,
+      "tag": "0013_storefront_hero_variant",
+      "breakpoints": true
+    },
+    {
+      "idx": 14,
+      "version": "6",
+      "when": 1792613000000,
+      "tag": "0014_storefront_cover_focus",
+      "breakpoints": true
+    },
+    {
+      "idx": 15,
+      "version": "6",
+      "when": 1792614000000,
+      "tag": "0015_storefront_draft",
+      "breakpoints": true
+    },
+    {
+      "idx": 16,
+      "version": "6",
+      "when": 1792615000000,
+      "tag": "0016_vehicle_fipe_pricing",
+      "breakpoints": true
+    }
+  ]
+}

@@ -1,0 +1,235 @@
+@reference "../../../../styles/index.css";
+
+.uploader {
+  @apply flex flex-col gap-3;
+}
+
+.uploader__dropzone {
+  @apply flex cursor-pointer flex-col items-center justify-center gap-2 rounded-md border border-dashed border-border bg-surface-sunken px-4 py-8 text-center transition-colors;
+}
+
+.uploader__dropzone:hover,
+.uploader__dropzoneActive {
+  @apply border-accent-strong bg-accent-soft/40;
+}
+
+.uploader__dropzoneDisabled {
+  @apply cursor-not-allowed opacity-60;
+}
+
+.uploader__hint {
+  @apply text-sm text-text-muted;
+}
+
+.uploader__limits {
+  @apply text-xs text-text-subtle;
+}
+
+.uploader__grid {
+  @apply grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4;
+}
+
+.uploader__item {
+  @apply relative overflow-hidden rounded-md border border-border bg-surface;
+}
+
+.uploader__itemPrimary {
+  @apply ring-2 ring-accent-strong;
+}
+
+.uploader__thumb {
+  @apply aspect-[4/3] w-full object-cover;
+}
+
+.uploader__overlay {
+  @apply absolute inset-x-0 bottom-0 flex flex-wrap gap-1 bg-ink/70 p-1.5;
+}
+
+.uploader__overlayBtn {
+  @apply !size-7 !text-white [&_svg]:!text-white;
+}
+
+.uploader__badge {
+  @apply absolute left-2 top-2 rounded bg-accent-button px-1.5 py-0.5 text-[10px] font-medium text-white;
+}
+
+.uploader__progress {
+  @apply absolute inset-x-0 bottom-0 h-1 bg-border;
+}
+
+.uploader__progressBar {
+  @apply h-full bg-accent-button transition-all;
+}
+
+.uploader__error {
+  @apply px-2 py-1 text-xs text-error-fg;
+}
+
+.uploader__single {
+  @apply max-w-xs;
+}
+
+.uploader__compact {
+  @apply max-w-none;
+}
+
+.uploader__dropzoneCompact {
+  @apply py-5;
+}
+
+.uploader__compactRow {
+  @apply flex flex-wrap items-start gap-3;
+}
+
+.uploader__compactPreview {
+  @apply relative overflow-hidden rounded-md border border-border bg-surface-sunken;
+}
+
+.uploader__logoThumb {
+  @apply size-20 object-contain p-2;
+}
+
+.uploader__coverThumb {
+  @apply aspect-[16/7] w-full max-w-md object-cover;
+}
+
+.uploader__compactCover .uploader__compactPreview {
+  @apply w-full max-w-md;
+}
+
+.uploader__compactActions {
+  @apply flex flex-col items-start gap-2;
+}
+
+.uploader__gallery {
+  @apply flex min-h-0 max-w-none flex-1 flex-col gap-4;
+}
+
+.uploader__count {
+  @apply text-xs tabular-nums text-text-muted;
+}
+
+.uploader__dropzoneGallery {
+  @apply py-6;
+}
+
+/** Layout: miniaturas + add à esquerda (altura = preview), preview à direita. */
+.uploader__gallerySplit {
+  @apply grid min-h-0 flex-1 gap-4 lg:grid-cols-[minmax(12rem,18rem)_minmax(0,1fr)] lg:items-stretch;
+}
+
+.uploader__galleryThumbs {
+  @apply flex min-h-0 flex-col gap-3 lg:h-full;
+}
+
+.uploader__gridGallery {
+  @apply grid min-h-0 grid-cols-3 gap-2 overflow-y-auto sm:grid-cols-4 lg:grid-cols-2;
+}
+
+.uploader__itemGallery {
+  @apply max-w-none cursor-grab touch-none active:cursor-grabbing;
+}
+
+.uploader__itemGallery .uploader__thumb {
+  @apply aspect-square;
+}
+
+.uploader__thumbHit {
+  @apply relative block w-full cursor-grab appearance-none border-0 bg-transparent p-0 text-left active:cursor-grabbing;
+}
+
+.uploader__dragHandle {
+  @apply pointer-events-none absolute left-1 top-1 flex size-6 items-center justify-center rounded bg-ink/55 text-white opacity-0 transition-opacity;
+}
+
+.uploader__itemGallery:hover .uploader__dragHandle,
+.uploader__itemGallery:focus-within .uploader__dragHandle,
+.uploader__itemOverlay .uploader__dragHandle {
+  @apply opacity-100;
+}
+
+.uploader__itemSelected {
+  @apply ring-2 ring-accent-strong ring-offset-2 ring-offset-surface;
+}
+
+/** Slot original enquanto o card flutuante é arrastado (feedback tipo Kanban). */
+.uploader__itemDragging {
+  @apply z-10 border-2 border-dashed border-accent-strong opacity-40;
+}
+
+.uploader__itemDragging .uploader__thumb {
+  @apply opacity-30;
+}
+
+.uploader__itemOverlay {
+  @apply pointer-events-none w-[min(100%,9rem)] cursor-grabbing shadow-popover ring-2 ring-accent-strong scale-105;
+}
+
+.uploader__itemGallery .uploader__overlay {
+  @apply justify-end opacity-0 transition-opacity;
+}
+
+.uploader__itemGallery:hover .uploader__overlay,
+.uploader__itemGallery:focus-within .uploader__overlay {
+  @apply opacity-100;
+}
+
+.uploader__itemDragging .uploader__overlay,
+.uploader__itemDragging .uploader__dragHandle {
+  @apply opacity-0;
+}
+
+.uploader__sortHint {
+  @apply text-xs text-text-muted;
+}
+
+/** Botões de adicionar ancorados na base da coluna esquerda. */
+.uploader__galleryAdd {
+  @apply mt-auto flex w-full flex-col gap-2;
+}
+
+.uploader__galleryAddBtn {
+  @apply w-full;
+}
+
+.uploader__galleryDropzone {
+  @apply w-full justify-center text-center;
+}
+
+.uploader__galleryPreview {
+  @apply flex min-h-0 flex-col gap-3 rounded-lg border border-border bg-surface-sunken p-3 lg:min-h-[22rem];
+}
+
+.uploader__galleryPreviewFrame {
+  @apply relative flex min-h-[14rem] flex-1 items-center justify-center overflow-hidden rounded-md bg-surface;
+}
+
+.uploader__galleryPreviewImg {
+  @apply max-h-full max-w-full object-contain;
+}
+
+.uploader__galleryPreviewEmpty {
+  @apply px-6 text-center text-sm text-text-muted;
+}
+
+.uploader__galleryPreviewActions {
+  @apply flex flex-wrap items-center gap-2;
+}
+
+/** Dropzone textual — sem caixa vazia abaixo. */
+.uploader__dropzoneInline {
+  @apply inline-flex min-h-[var(--touch-min)] cursor-pointer items-center rounded-md border border-dashed border-border bg-transparent px-3 py-2 text-sm text-text-muted transition-colors;
+}
+
+.uploader__dropzoneInline:hover,
+.uploader__dropzoneActive.uploader__dropzoneInline {
+  @apply border-accent-strong bg-accent-soft/40 text-accent-strong;
+}
+
+.uploader__lightbox {
+  @apply max-w-3xl;
+}
+
+.uploader__lightboxImage {
+  @apply mt-2 max-h-[70vh] w-full rounded-md object-contain;
+}

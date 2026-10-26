@@ -1,0 +1,68 @@
+@reference "../../styles/index.css";
+
+.onboarding {
+  @apply flex min-h-full flex-1 flex-col items-center bg-bg px-4 py-10;
+  background:
+    radial-gradient(ellipse 80% 40% at 50% -10%, color-mix(in oklab, var(--color-accent) 10%, transparent), transparent),
+    var(--color-bg);
+}
+
+.onboarding__card {
+  @apply w-full max-w-xl rounded-xl border border-border bg-surface p-6 shadow-sm sm:p-8;
+}
+
+.onboarding__eyebrow {
+  @apply text-xs font-semibold uppercase tracking-[0.08em] text-accent-strong;
+}
+
+.onboarding__title {
+  @apply mt-1 text-2xl font-semibold text-text;
+}
+
+.onboarding__subtitle {
+  @apply mb-4 text-sm text-text-muted;
+}
+
+.onboarding__form {
+  @apply flex flex-col gap-4;
+}
+
+.onboarding__row {
+  @apply grid gap-4 sm:grid-cols-2;
+}
+
+.onboarding__actions {
+  @apply mt-2 flex flex-wrap justify-between gap-3;
+}
+
+.onboarding__error {
+  @apply rounded-md border border-error-fg/20 bg-error-bg px-3 py-2 text-sm text-error-fg;
+}
+
+.onboarding__hint {
+  @apply text-xs text-text-muted;
+}
+
+.onboarding__textareaLabel {
+  @apply text-sm font-medium text-text;
+}
+
+.onboarding__textarea {
+  @apply w-full rounded-md border border-border bg-surface-sunken px-3 py-2.5 text-sm text-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-strong;
+}
+
+.onboarding__review {
+  @apply flex flex-col gap-3 rounded-md border border-border bg-surface-sunken p-4;
+}
+
+.onboarding__reviewRow {
+  @apply grid gap-0.5 sm:grid-cols-[10rem_1fr];
+}
+
+.onboarding__reviewRow dt {
+  @apply text-xs font-medium uppercase tracking-wide text-text-subtle;
+}
+
+.onboarding__reviewRow dd {
+  @apply text-sm text-text;
+}

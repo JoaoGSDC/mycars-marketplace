@@ -1,0 +1,412 @@
+@reference "../../styles/index.css";
+
+.dealersLanding {
+  @apply flex min-h-full flex-1 flex-col bg-bg text-text;
+}
+
+.dealersLanding__skip {
+  @apply sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[var(--z-max)] focus:rounded-md focus:bg-surface focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-text focus:ring-2 focus:ring-accent-strong;
+}
+
+/* Grade horizontal única — mesma do SiteHeader solid */
+.dealersLanding__container {
+  @apply mx-auto w-full max-w-[var(--container-max)] px-[var(--container-pad)];
+}
+
+/* —— Hero —— */
+.dealersLanding__hero {
+  @apply w-full bg-ink text-white;
+}
+
+.dealersLanding__heroInner {
+  @apply grid gap-10 py-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:items-center lg:gap-12 lg:py-12;
+}
+
+.dealersLanding__heroCopy {
+  @apply flex max-w-xl flex-col gap-5;
+}
+
+.dealersLanding__heroTitle {
+  @apply text-[length:var(--text-h1)] font-black leading-[var(--leading-display)] tracking-tight text-white;
+}
+
+.dealersLanding__heroTitleLine {
+  @apply inline;
+}
+
+.dealersLanding__heroLead {
+  @apply max-w-lg text-base text-white/75 md:text-lg;
+}
+
+.dealersLanding__heroActions {
+  @apply flex flex-wrap gap-3;
+}
+
+.dealersLanding__heroSecondary {
+  @apply !border-white/30 !bg-transparent !text-white hover:!bg-white/10;
+}
+
+.dealersLanding__heroLogin {
+  @apply text-sm text-white/55;
+}
+
+.dealersLanding__heroLogin a {
+  @apply text-white/80 underline-offset-4 transition-colors hover:text-white hover:underline;
+}
+
+.dealersLanding__heroVisual {
+  @apply min-w-0;
+}
+
+/* —— Sections (faixas full-bleed; conteúdo sempre em .container) —— */
+.dealersLanding__section {
+  padding-block: clamp(28px, 3vw, 44px);
+}
+
+.dealersLanding__sectionMuted {
+  @apply w-full bg-surface-sunken;
+  padding-block: clamp(28px, 3vw, 44px);
+}
+
+.dealersLanding__sectionDark {
+  @apply w-full bg-ink text-white;
+  padding-block: clamp(28px, 3vw, 44px);
+}
+
+.dealersLanding__sectionHeader {
+  @apply mb-6 md:mb-8;
+}
+
+.dealersLanding__onDarkTitle {
+  @apply !text-white;
+}
+
+.dealersLanding__onDarkLead {
+  @apply mt-3 max-w-xl text-base text-white/75;
+}
+
+/* —— Pillars —— */
+.dealersLanding__pillar {
+  @apply flex flex-col gap-3 rounded-md border border-border bg-surface p-5;
+}
+
+.dealersLanding__pillarTop {
+  @apply flex items-start justify-between gap-3;
+}
+
+.dealersLanding__pillarIcon {
+  @apply flex size-11 shrink-0 items-center justify-center rounded-md bg-accent-soft text-accent-strong;
+}
+
+.dealersLanding__pillarTitle {
+  @apply text-lg font-semibold tracking-tight text-text;
+}
+
+.dealersLanding__pillarDesc {
+  @apply text-sm leading-relaxed text-text-muted;
+}
+
+/* —— Demo —— */
+.dealersLanding__demoInner {
+  @apply grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-center lg:gap-12;
+}
+
+.dealersLanding__demoCopy {
+  @apply flex flex-col gap-4;
+}
+
+.dealersLanding__demoList {
+  @apply mt-4 flex flex-col gap-3;
+}
+
+.dealersLanding__demoItem {
+  @apply flex flex-col gap-0.5 border-l-2 border-accent pl-3;
+}
+
+.dealersLanding__demoItemTitle {
+  @apply text-sm font-semibold text-white;
+}
+
+.dealersLanding__demoItemHint {
+  @apply text-sm text-white/60;
+}
+
+.dealersLanding__demoVisual {
+  @apply min-w-0;
+}
+
+/* —— Storefront —— */
+.dealersLanding__storefront {
+  @apply grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-14;
+}
+
+.dealersLanding__storefrontCopy {
+  @apply flex flex-col gap-4;
+}
+
+.dealersLanding__storefrontPoints {
+  @apply mt-2 flex flex-col gap-2 text-sm text-text;
+}
+
+.dealersLanding__storefrontPoints li {
+  @apply relative pl-4;
+}
+
+.dealersLanding__storefrontPoints li::before {
+  content: '';
+  @apply absolute left-0 top-[0.55em] size-1.5 rounded-full bg-accent;
+}
+
+/* —— Roadmap —— */
+.dealersLanding__roadmap {
+  @apply grid gap-4 md:grid-cols-2;
+}
+
+.dealersLanding__roadmapCard,
+.dealersLanding__roadmapCardMuted {
+  @apply flex flex-col gap-3 rounded-md border border-border bg-surface p-5 md:p-6;
+}
+
+.dealersLanding__roadmapCardMuted {
+  @apply bg-bg;
+}
+
+.dealersLanding__roadmapTitle {
+  @apply text-lg font-semibold tracking-tight text-text;
+}
+
+.dealersLanding__roadmapList {
+  @apply flex flex-col gap-2 text-sm text-text-muted;
+}
+
+.dealersLanding__roadmapList li {
+  @apply relative pl-4;
+}
+
+.dealersLanding__roadmapList li::before {
+  content: '';
+  @apply absolute left-0 top-[0.55em] size-1.5 rounded-full bg-border;
+}
+
+.dealersLanding__roadmapCard .dealersLanding__roadmapList li::before {
+  @apply bg-accent-strong;
+}
+
+.dealersLanding__roadmapHint {
+  @apply mt-1 text-xs text-text-subtle;
+}
+
+/* —— Steps —— */
+.dealersLanding__steps {
+  @apply grid gap-4 sm:grid-cols-2;
+}
+
+.dealersLanding__step {
+  @apply flex gap-4 rounded-md border border-border bg-surface p-5;
+}
+
+.dealersLanding__stepNum {
+  @apply text-sm font-bold tabular-nums tracking-wide text-accent-strong;
+}
+
+.dealersLanding__stepTitle {
+  @apply text-base font-semibold text-text;
+}
+
+.dealersLanding__stepDesc {
+  @apply mt-1 text-sm text-text-muted;
+}
+
+/* —— FAQ —— */
+.dealersLanding__faq {
+  @apply flex w-full flex-col divide-y divide-border border-y border-border;
+}
+
+.dealersLanding__faqItem {
+  @apply py-1;
+}
+
+.dealersLanding__faqQ {
+  @apply cursor-pointer list-none py-4 text-base font-semibold text-text outline-none marker:content-none;
+}
+
+.dealersLanding__faqQ::-webkit-details-marker {
+  display: none;
+}
+
+.dealersLanding__faqQ::after {
+  content: '+';
+  @apply float-right font-normal text-text-subtle;
+}
+
+.dealersLanding__faqItem[open] .dealersLanding__faqQ::after {
+  content: '–';
+}
+
+.dealersLanding__faqA {
+  @apply pb-4 pr-8 text-sm leading-relaxed text-text-muted;
+}
+
+/* —— Closing (card, alinhado ao detalhe do veículo) —— */
+.dealersLanding__closing {
+  @apply flex flex-col gap-6 rounded-md bg-ink p-6 text-white md:flex-row md:items-end md:justify-between md:gap-10 md:p-8;
+}
+
+.dealersLanding__closingCopy {
+  @apply flex max-w-xl flex-col gap-3;
+}
+
+.dealersLanding__closingTitle {
+  @apply text-[length:var(--text-h3)] font-semibold tracking-tight text-white md:text-[length:var(--text-h2)];
+}
+
+.dealersLanding__closingDesc {
+  @apply text-sm text-white/75 md:text-base;
+}
+
+.dealersLanding__closingCta {
+  @apply w-full shrink-0 sm:w-auto;
+}
+
+/* —— Dashboard preview —— */
+.dashboardPreview {
+  @apply relative;
+}
+
+.dashboardPreview__badge {
+  @apply mb-2 text-[length:var(--text-caption)] uppercase tracking-[var(--tracking-eyebrow)] text-white/45;
+}
+
+.dashboardPreview__chrome {
+  @apply grid overflow-hidden rounded-md border border-white/15 bg-[#141414] shadow-[var(--shadow-popover)] sm:grid-cols-[9.5rem_minmax(0,1fr)];
+}
+
+.dashboardPreview__sidebar {
+  @apply hidden flex-col gap-4 border-r border-white/10 bg-[#0f0f0f] p-3 sm:flex;
+}
+
+.dashboardPreview__brand {
+  @apply px-1 pt-1 opacity-90;
+}
+
+.dashboardPreview__nav {
+  @apply flex flex-col gap-0.5;
+}
+
+.dashboardPreview__navItem,
+.dashboardPreview__navItem--active {
+  @apply flex items-center gap-2 rounded-md px-2 py-2 text-xs text-white/55;
+}
+
+.dashboardPreview__navItem--active {
+  @apply bg-white/10 font-medium text-white;
+}
+
+.dashboardPreview__main {
+  @apply flex min-w-0 flex-col gap-3 p-3 sm:p-4;
+}
+
+.dashboardPreview__topbar {
+  @apply border-b border-white/10 pb-3;
+}
+
+.dashboardPreview__store {
+  @apply text-sm font-semibold text-white;
+}
+
+.dashboardPreview__meta {
+  @apply text-xs text-white/45;
+}
+
+.dashboardPreview__grid {
+  @apply grid grid-cols-2 gap-2;
+}
+
+.dashboardPreview__card {
+  @apply flex flex-col gap-1 rounded-md border border-white/10 bg-white/5 p-3;
+}
+
+.dashboardPreview__cardLabel {
+  @apply text-xs font-semibold text-white;
+}
+
+.dashboardPreview__cardHint {
+  @apply text-[0.65rem] text-white/45;
+}
+
+.dashboardPreview__bars {
+  @apply mt-2 flex flex-col gap-1;
+}
+
+.dashboardPreview__bars span {
+  @apply h-1 rounded-full bg-white/15;
+}
+
+.dashboardPreview__bars span:nth-child(1) {
+  @apply w-[85%] bg-accent/80;
+}
+
+.dashboardPreview__bars span:nth-child(2) {
+  @apply w-[60%];
+}
+
+.dashboardPreview__bars span:nth-child(3) {
+  @apply w-[40%];
+}
+
+/* —— Storefront preview —— */
+.storefrontPreview {
+  @apply min-w-0;
+}
+
+.storefrontPreview__browser {
+  @apply overflow-hidden rounded-md border border-border bg-surface shadow-[var(--shadow-card)];
+}
+
+.storefrontPreview__bar {
+  @apply flex items-center gap-1.5 border-b border-border bg-surface-sunken px-3 py-2;
+}
+
+.storefrontPreview__bar > span {
+  @apply size-2 rounded-full bg-border;
+}
+
+.storefrontPreview__url {
+  @apply ml-2 truncate text-xs text-text-muted;
+}
+
+.storefrontPreview__body {
+  @apply flex flex-col gap-3 p-3;
+}
+
+.storefrontPreview__header {
+  @apply flex items-center justify-between gap-2;
+}
+
+.storefrontPreview__logo {
+  @apply text-sm font-bold tracking-tight text-text;
+}
+
+.storefrontPreview__nav {
+  @apply hidden text-xs text-text-muted sm:inline;
+}
+
+.storefrontPreview__hero {
+  @apply rounded-md bg-ink px-4 py-6 text-white;
+}
+
+.storefrontPreview__heroTitle {
+  @apply text-base font-semibold;
+}
+
+.storefrontPreview__heroSub {
+  @apply mt-1 text-xs text-white/60;
+}
+
+.storefrontPreview__cards {
+  @apply grid grid-cols-3 gap-2;
+}
+
+.storefrontPreview__card {
+  @apply aspect-[4/3] rounded-md bg-surface-sunken;
+}

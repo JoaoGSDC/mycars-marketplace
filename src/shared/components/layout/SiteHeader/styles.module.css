@@ -1,0 +1,199 @@
+@reference "../../../../styles/index.css";
+
+.siteHeader {
+  @apply z-[var(--z-header)] w-full;
+}
+
+.siteHeader--floating {
+  @apply absolute inset-x-0 top-0 px-4 md:px-6;
+  padding-top: max(1rem, env(safe-area-inset-top, 0px));
+}
+
+@media (min-width: 768px) {
+  .siteHeader--floating {
+    padding-top: max(1.5rem, env(safe-area-inset-top, 0px));
+  }
+}
+
+.siteHeader--fixed {
+  @apply fixed;
+}
+
+.siteHeader--solid {
+  @apply sticky top-0 border-b border-border bg-surface;
+}
+
+.siteHeader--storefront {
+  @apply border-b border-border bg-surface px-4 py-3 md:px-6;
+}
+
+.siteHeader__bar {
+  @apply mx-auto flex w-full max-w-[var(--container-max)] items-center justify-between gap-4;
+}
+
+.siteHeader--floating .siteHeader__bar {
+  @apply w-full max-w-none rounded-md border border-border bg-surface px-4 py-2 shadow-card md:px-6 md:py-3;
+}
+
+.siteHeader--solid .siteHeader__bar,
+.siteHeader--storefront .siteHeader__bar {
+  @apply px-[var(--container-pad)] py-3 md:py-4;
+}
+
+.siteHeader__start {
+  @apply flex min-w-0 items-center gap-4 md:gap-8;
+}
+
+.siteHeader__logoLink {
+  @apply shrink-0 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-strong;
+}
+
+.siteHeader__store {
+  @apply flex min-w-0 flex-col gap-0.5;
+}
+
+.siteHeader__storeName {
+  @apply truncate text-sm font-medium text-text-muted;
+}
+
+.siteHeader__cityWrap {
+  @apply relative hidden md:block;
+}
+
+.siteHeader__city {
+  @apply flex cursor-default items-center gap-1.5 rounded-md px-2 py-1 text-sm font-medium text-text;
+}
+
+.siteHeader__cityMenu {
+  @apply absolute left-0 top-full z-[var(--z-popover)] mt-1 max-h-72 min-w-[12rem] overflow-y-auto rounded-lg border border-border bg-surface py-1 shadow-popover;
+}
+
+.siteHeader__cityOption {
+  @apply block w-full px-3 py-2 text-left text-sm text-text hover:bg-surface-sunken focus-visible:bg-surface-sunken focus-visible:outline-none;
+}
+
+.siteHeader__cityOption--active {
+  @apply font-semibold text-accent-strong;
+}
+
+.siteHeader__navDesktop {
+  @apply hidden flex-1 justify-center lg:flex;
+}
+
+.siteHeader__navList {
+  @apply flex flex-wrap items-center justify-center gap-6;
+}
+
+.siteHeader__navLinkFloating {
+  @apply text-sm font-medium text-text-muted transition-colors hover:text-text;
+}
+
+.siteHeader__navLinkFloating--active {
+  @apply font-bold text-text;
+}
+
+.siteHeader__navLinkSolid {
+  @apply relative pb-1 text-sm font-medium text-text-muted transition-colors hover:text-text;
+}
+
+.siteHeader__navLinkSolid--active {
+  @apply font-semibold text-accent-strong;
+}
+
+.siteHeader__navLinkSolid--active::after {
+  @apply absolute inset-x-0 -bottom-0.5 h-0.5 rounded-full bg-accent-strong content-[''];
+}
+
+.siteHeader__actions {
+  @apply flex shrink-0 items-center gap-2 md:gap-3;
+}
+
+.siteHeader__actionDesktop {
+  @apply hidden lg:block;
+}
+
+.siteHeader__iconWrap {
+  @apply relative;
+}
+
+.siteHeader__badge {
+  @apply absolute -right-1 -top-1 min-w-5 px-1;
+}
+
+.siteHeader__userChip {
+  @apply hidden items-center gap-2 rounded-full border border-border bg-surface-sunken py-1 pl-1 pr-3 text-sm font-medium text-text transition-colors hover:bg-surface lg:flex;
+}
+
+.siteHeader__userAvatar {
+  @apply flex size-8 items-center justify-center rounded-full bg-accent-soft text-xs font-bold text-accent-strong;
+}
+
+.siteHeader__userName {
+  @apply max-w-[8rem] truncate;
+}
+
+.siteHeader__menuButton {
+  @apply text-text-muted lg:hidden hover:text-text;
+}
+
+/* —— Drawer mobile —— */
+.siteHeader__drawer {
+  @apply !max-w-[min(20rem,100vw)];
+}
+
+.siteHeader__drawerHeader {
+  @apply gap-1 border-b border-border pb-4;
+}
+
+.siteHeader__drawerLead {
+  @apply text-sm text-text-muted;
+}
+
+.siteHeader__drawerBody {
+  @apply !py-3;
+}
+
+.siteHeader__drawerList {
+  @apply flex flex-col gap-1;
+}
+
+.siteHeader__drawerLink {
+  @apply flex min-h-[var(--touch-min)] items-center rounded-lg px-3 text-base font-medium text-text transition-colors active:bg-surface-sunken hover:bg-surface-sunken;
+}
+
+.siteHeader__drawerLink--active {
+  @apply bg-accent-soft font-semibold text-accent-strong;
+}
+
+.siteHeader__drawerFooter {
+  @apply gap-2;
+}
+
+.siteHeader__drawerAction {
+  @apply flex min-h-[var(--touch-min)] w-full items-center gap-3 rounded-lg px-3 text-left text-base font-medium text-text transition-colors active:bg-surface-sunken hover:bg-surface-sunken focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-strong;
+}
+
+.siteHeader__drawerActionLabel {
+  @apply flex min-w-0 flex-1 items-center gap-2;
+}
+
+.siteHeader__drawerActionBadge {
+  @apply static;
+}
+
+.siteHeader__drawerCtaInner {
+  @apply w-full pt-1;
+}
+
+.siteHeader__drawerCtaInner :global(a),
+.siteHeader__drawerCtaInner :global(button) {
+  @apply w-full justify-center;
+}
+
+.siteHeader__favoritesSheet {
+  @apply space-y-3 text-sm text-text-muted;
+}
+
+.siteHeader__favoritesCount {
+  @apply text-base font-semibold text-text;
+}

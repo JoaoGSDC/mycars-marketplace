@@ -1,0 +1,107 @@
+@reference "../../../../styles/index.css";
+
+.searchPanel {
+  /* padding = gap entre tabs e selects (mesmo valor); mobile mais compacto */
+  @apply flex w-full flex-col gap-5 rounded-2xl border-0 bg-glass-bg p-5 shadow-[var(--shadow-glass)] backdrop-blur-md md:gap-10 md:p-10;
+}
+
+.searchPanel__top {
+  @apply flex flex-wrap items-center justify-between gap-3;
+}
+
+.searchPanel__tabs {
+  @apply gap-0;
+}
+
+.searchPanel__tabList {
+  @apply !bg-white/10 p-1;
+}
+
+.searchPanel__tabTrigger {
+  @apply !text-glass-muted data-[state=active]:!bg-accent-button data-[state=active]:!text-inverse;
+}
+
+.searchPanel__row {
+  @apply flex flex-col gap-4 lg:flex-row lg:items-end;
+}
+
+.searchPanel__fields {
+  @apply grid flex-1 gap-4 sm:grid-cols-2 lg:grid-cols-4;
+}
+
+.searchPanel__fields--query {
+  @apply lg:grid-cols-3;
+}
+
+.searchPanel__query {
+  @apply sm:col-span-2 lg:col-span-2;
+}
+
+.searchPanel__queryField {
+  @apply gap-1;
+}
+
+.searchPanel__queryField :global(label) {
+  @apply text-glass-text;
+}
+
+/* Borda no wrapper do Field (underline), não no input — evita linha dupla. */
+.searchPanel__queryField > div {
+  @apply !border-white/45 focus-within:!border-white/70;
+}
+
+.searchPanel__queryInput {
+  @apply !border-0 !bg-transparent !text-glass-text placeholder:!text-glass-muted;
+}
+
+.searchPanel__select {
+  @apply gap-1;
+}
+
+.searchPanel__select--desktopOnly {
+  @apply max-md:hidden;
+}
+
+.searchPanel__selectLabel {
+  @apply text-glass-text;
+}
+
+.searchPanel__selectTrigger {
+  @apply !border-0 !border-b !border-white/45 !bg-transparent !text-glass-text data-[placeholder]:!text-glass-muted;
+}
+
+.searchPanel__selectIcon {
+  @apply !text-white/55;
+}
+
+.searchPanel__actions {
+  @apply flex flex-wrap items-center gap-3;
+}
+
+.searchPanel__action {
+  @apply !border-0 !bg-white !text-ink shadow-card hover:!bg-white;
+}
+
+.searchPanel__action--desktop {
+  @apply max-md:hidden;
+}
+
+.searchPanel__actionIcon {
+  @apply text-ink-muted;
+}
+
+.searchPanel__mobileSubmit {
+  @apply w-full md:hidden;
+}
+
+.searchPanel__mobileMore {
+  @apply w-full text-glass-text md:hidden;
+}
+
+.searchPanel__region {
+  @apply border-t border-white/30 pt-4 text-glass-text;
+}
+
+.searchPanel__drawerBody {
+  @apply flex flex-col gap-4;
+}

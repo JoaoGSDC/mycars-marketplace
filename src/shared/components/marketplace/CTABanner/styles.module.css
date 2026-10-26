@@ -1,0 +1,37 @@
+@reference "../../../../styles/index.css";
+
+.ctaBanner {
+  @apply relative flex min-h-[280px] flex-col justify-center overflow-hidden rounded-2xl bg-ink p-8 text-white lg:min-h-[320px] lg:p-12;
+}
+
+.ctaBanner__media {
+  @apply absolute inset-0;
+}
+
+.ctaBanner__media > * {
+  @apply size-full object-cover;
+}
+
+.ctaBanner__overlay {
+  @apply absolute inset-0 bg-ink/55;
+}
+
+.ctaBanner__content {
+  @apply relative z-[1] flex max-w-xl flex-col gap-4;
+}
+
+.ctaBanner__eyebrow {
+  @apply text-white/90;
+}
+
+.ctaBanner__rating {
+  @apply text-white;
+}
+
+.ctaBanner__title {
+  @apply text-3xl font-semibold leading-tight text-white;
+}
+
+.ctaBanner__description {
+  @apply text-base text-white/90;
+}

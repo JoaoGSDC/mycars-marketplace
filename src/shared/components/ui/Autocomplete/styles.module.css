@@ -1,0 +1,29 @@
+@reference "../../../../styles/index.css";
+
+.autocomplete {
+  @apply relative flex flex-col gap-1.5;
+}
+
+.autocomplete__list {
+  @apply absolute inset-x-0 top-[calc(100%+0.25rem)] z-[var(--z-popover)] max-h-60 overflow-auto rounded-md border border-border bg-surface py-1 shadow-popover;
+}
+
+.autocomplete__option {
+  @apply flex min-h-[var(--touch-min)] w-full cursor-pointer items-center px-3 py-2 text-left text-sm text-text transition-colors hover:bg-surface-sunken focus-visible:bg-surface-sunken focus-visible:outline-none;
+}
+
+.autocomplete__optionLabel {
+  @apply min-w-0 flex-1 truncate;
+}
+
+.autocomplete__optionMeta {
+  @apply text-text-muted;
+}
+
+.autocomplete__option--active {
+  @apply bg-accent-soft text-accent-strong;
+}
+
+.autocomplete__empty {
+  @apply px-3 py-2 text-sm text-text-muted;
+}

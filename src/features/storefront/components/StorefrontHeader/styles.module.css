@@ -1,0 +1,131 @@
+@reference "../../../../styles/index.css";
+
+.storefrontHeader__absoluteWrap {
+  @apply absolute inset-x-0 top-0 z-[var(--z-header)];
+  padding-top: env(safe-area-inset-top, 0px);
+}
+
+.storefrontHeader__fixedWrap {
+  @apply fixed inset-x-0 top-0 z-[var(--z-header)];
+  padding-top: env(safe-area-inset-top, 0px);
+}
+
+.storefrontHeader {
+  @apply z-[var(--z-header)] w-full;
+}
+
+.storefrontHeader--solid {
+  @apply border-b border-border bg-surface;
+}
+
+.storefrontHeader--floating {
+  @apply px-4 md:px-6;
+  padding-top: max(1rem, env(safe-area-inset-top, 0px));
+}
+
+@media (min-width: 768px) {
+  .storefrontHeader--floating {
+    padding-top: max(1.5rem, env(safe-area-inset-top, 0px));
+  }
+}
+
+.storefrontHeader__bar {
+  @apply mx-auto flex w-full max-w-[var(--container-max)] items-center justify-between gap-4;
+}
+
+.storefrontHeader--solid .storefrontHeader__bar {
+  @apply px-[var(--container-pad)] py-2.5;
+}
+
+.storefrontHeader--floating .storefrontHeader__bar {
+  @apply w-full max-w-none rounded-md border border-border bg-surface px-4 py-2 shadow-card md:px-6 md:py-3;
+}
+
+.storefrontHeader__brand {
+  @apply flex min-w-0 items-center no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--storefront-accent,var(--color-accent-strong))];
+}
+
+.storefrontHeader__logo {
+  @apply h-8 w-auto max-w-[10rem] object-contain object-left md:h-9;
+}
+
+.storefrontHeader__name {
+  @apply truncate text-sm font-semibold tracking-tight text-text md:text-base;
+}
+
+.storefrontHeader__nav {
+  @apply hidden flex-1 justify-center lg:flex;
+}
+
+.storefrontHeader__navList {
+  @apply flex flex-wrap items-center justify-center gap-6;
+}
+
+.storefrontHeader__navLink {
+  @apply text-sm font-medium text-text-muted transition-colors hover:text-text;
+}
+
+.storefrontHeader__navLink--active {
+  @apply text-[var(--storefront-accent,var(--color-accent-strong))];
+}
+
+.storefrontHeader__actions {
+  @apply flex shrink-0 items-center gap-2;
+}
+
+.storefrontHeader__actionDesktop {
+  @apply hidden lg:inline-flex;
+}
+
+.storefrontHeader__admin {
+  @apply hidden text-xs font-medium text-text-subtle underline-offset-2 hover:text-text hover:underline lg:inline;
+}
+
+.storefrontHeader__cta {
+  @apply shrink-0;
+}
+
+.storefrontHeader__cta--solid {
+  @apply !border-[var(--storefront-accent,var(--color-accent-strong))] !text-[var(--storefront-accent,var(--color-accent-strong))] hover:!bg-[var(--storefront-accent,var(--color-accent-soft))];
+}
+
+.storefrontHeader__menu {
+  @apply text-text-muted lg:hidden hover:text-text;
+}
+
+/* —— Drawer mobile —— */
+.storefrontHeader__drawer {
+  @apply !max-w-[min(20rem,100vw)];
+}
+
+.storefrontHeader__drawerHeader {
+  @apply gap-1 border-b border-border pb-4;
+}
+
+.storefrontHeader__drawerLead {
+  @apply truncate text-sm text-text-muted;
+}
+
+.storefrontHeader__drawerBody {
+  @apply !py-3;
+}
+
+.storefrontHeader__drawerList {
+  @apply flex flex-col gap-1;
+}
+
+.storefrontHeader__drawerLink {
+  @apply flex min-h-[var(--touch-min)] items-center rounded-lg px-3 text-base font-medium text-text transition-colors active:bg-surface-sunken hover:bg-surface-sunken;
+}
+
+.storefrontHeader__drawerLink--active {
+  @apply bg-[var(--storefront-accent-soft,var(--color-accent-soft))] font-semibold text-[var(--storefront-accent,var(--color-accent-strong))];
+}
+
+.storefrontHeader__drawerAdmin {
+  @apply mt-4 block px-3 text-sm font-medium text-text-subtle underline-offset-2 hover:text-text hover:underline;
+}
+
+.storefrontHeader__drawerFooter {
+  @apply gap-2;
+}

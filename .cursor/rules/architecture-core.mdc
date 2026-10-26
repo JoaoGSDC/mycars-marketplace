@@ -1,0 +1,53 @@
+---
+description: Arquitetura — camadas, aliases e fronteiras (sempre ativo)
+alwaysApply: true
+---
+
+# Arquitetura obrigatória
+
+Documentação completa: `README.md`. Referência rápida: `ARCHITECTURE.md`.
+
+## Fluxo de dados
+
+```
+features/shared → @services (axios) → /api/bff | /api/internal
+  → app/api/route.ts → api/*.controller.ts → server/*.service.ts
+  → server/repositories/*.repository.ts → shared/lib (db/schema)
+```
+
+## Aliases
+
+| Alias | Uso |
+|-------|-----|
+| `@features/*` | UI e hooks por domínio |
+| `@services` | HTTP client (frontend) |
+| `@app-types/*` | DTOs compartilhados (`src/shared/types/`) |
+| `@utils/*` | Helpers puros (sem HTTP/SQL) |
+| `@api/*` | Controllers HTTP |
+| `@server/*` | Services/validators — **somente server** |
+| `@lib/*` | Infra DB/auth — **somente server** |
+| `@components/*` | `src/shared/components/` |
+
+## Fronteiras (não violar)
+
+- **Frontend** (`features/`, `shared/components/`, `shared/services/`): **nunca** importar `@server/*` nem chamar repository/SQL.
+- **Tipos compartilhados**: `@app-types/*`, não `@server/{dominio}/*.types`.
+- **Schemas Zod**: apenas em `server/{dominio}/*.validators.ts`.
+
+## Onde colocar código novo
+
+| O quê | Onde |
+|-------|------|
+| Página admin fina | `src/app/admin/.../page.tsx` → import View de `@features` |
+| UI/hooks domínio | `src/features/{dominio}/` |
+| HTTP frontend | `shared/services/entities/` + `paths.ts` (`ENDPOINTS`) |
+| Route HTTP | `src/app/api/internal/{dominio}/route.ts` |
+| Controller | `src/api/internal/{dominio}/*.controller.ts` |
+| Regra de negócio | `src/server/{dominio}/*.service.ts` |
+| SQL | `src/server/repositories/{dominio}/*.repository.ts` |
+
+## Ao implementar
+
+1. Minimize escopo; siga convenções existentes no domínio.
+2. Valide com `npx tsc --noEmit` após mudanças backend/types.
+3. Não commitar sem pedido explícito do usuário.

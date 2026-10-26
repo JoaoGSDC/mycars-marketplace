@@ -1,0 +1,17 @@
+@reference "../../../../styles/index.css";
+
+.statCard {
+  @apply flex min-h-[140px] flex-col justify-end gap-2 rounded-xl bg-accent-button p-6 text-inverse lg:col-span-1;
+}
+
+.statCard__label {
+  @apply text-xs font-semibold uppercase tracking-[0.06em] text-inverse/80;
+}
+
+.statCard__value {
+  @apply text-3xl font-semibold tabular-nums;
+}
+
+.statCard__hint {
+  @apply text-sm text-inverse/80;
+}

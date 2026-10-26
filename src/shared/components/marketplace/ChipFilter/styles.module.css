@@ -1,0 +1,5 @@
+@reference "../../../../styles/index.css";
+
+.chipFilter {
+  @apply gap-2;
+}

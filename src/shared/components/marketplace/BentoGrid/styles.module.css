@@ -1,0 +1,22 @@
+@reference "../../../../styles/index.css";
+
+/* Assimetria referência A: 3 colunas no desktop; empilha no mobile */
+.bentoGrid {
+  @apply grid gap-4 md:grid-cols-2 lg:grid-cols-3 lg:grid-rows-[minmax(180px,auto)_minmax(180px,auto)];
+}
+
+.bentoGrid > *:nth-child(1) {
+  @apply lg:col-start-1 lg:row-start-1;
+}
+
+.bentoGrid > *:nth-child(2) {
+  @apply lg:col-start-1 lg:row-start-2;
+}
+
+.bentoGrid > *:nth-child(3) {
+  @apply lg:col-start-2 lg:row-span-2;
+}
+
+.bentoGrid > *:nth-child(4) {
+  @apply h-full lg:col-start-3 lg:row-span-2;
+}

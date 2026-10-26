@@ -1,0 +1,308 @@
+@reference "../../styles/index.css";
+
+/* —— Shell: 3 regiões (top / workspace / footer) —— */
+
+.editor {
+  @apply flex flex-col gap-3;
+}
+
+@media (min-width: 80rem) {
+  .editor {
+    /* topbar + breadcrumb + padding do DashboardShell */
+    height: calc(100svh - 7.25rem);
+    max-height: calc(100svh - 7.25rem);
+    overflow: hidden;
+  }
+}
+
+.editor__topBar {
+  @apply flex shrink-0 flex-col gap-2 sm:flex-row sm:items-start sm:justify-between;
+}
+
+.editor__topBarCopy {
+  @apply min-w-0 flex-1;
+}
+
+.editor__topBarTitle {
+  @apply text-[length:var(--text-h3)] font-semibold tracking-tight text-text;
+}
+
+.editor__topBarDesc {
+  @apply mt-0.5 text-sm text-text-muted;
+}
+
+.editor__topBarMeta {
+  @apply flex shrink-0 flex-col items-stretch gap-2 sm:items-end;
+}
+
+.editor__publicUrl {
+  @apply max-w-full truncate rounded-md border border-border bg-surface-sunken px-2.5 py-1.5 text-xs text-text-muted;
+}
+
+.editor__publicUrlStrong {
+  @apply font-medium text-text;
+}
+
+.editor__workspace {
+  @apply grid min-h-0 flex-1 gap-5 xl:grid-cols-[minmax(21.25rem,25rem)_minmax(0,1fr)] xl:items-stretch xl:overflow-hidden;
+}
+
+.editor__form {
+  @apply flex min-h-0 min-w-0 flex-col gap-4 xl:overflow-y-auto xl:pr-1;
+  scrollbar-gutter: stable;
+}
+
+.editor__tabBody {
+  @apply mt-3 flex flex-col gap-4;
+}
+
+.editor__formGrid {
+  @apply grid gap-4;
+}
+
+.editor__label {
+  @apply text-sm font-medium text-text;
+}
+
+.editor__textarea {
+  @apply w-full rounded-md border border-border bg-surface px-3 py-2.5 text-sm text-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-strong;
+}
+
+.editor__fieldset {
+  @apply rounded-md border border-border p-3;
+}
+
+.editor__legend {
+  @apply px-1 text-sm font-medium text-text;
+}
+
+.editor__colorList {
+  @apply mt-2 flex flex-wrap gap-2;
+}
+
+.editor__colorOption {
+  @apply inline-flex min-h-[var(--touch-min)] cursor-pointer items-center gap-2 rounded-md border border-transparent px-2 py-1.5 text-sm text-text transition-colors duration-[var(--duration-fast)] ease-[var(--ease-out)] hover:bg-surface-sunken motion-reduce:transition-none;
+}
+
+.editor__colorOptionActive {
+  @apply border-accent-strong bg-accent-soft;
+}
+
+.editor__swatch {
+  @apply size-5 rounded-full border border-border;
+}
+
+.editor__heroList {
+  @apply mt-2 flex flex-col gap-2;
+}
+
+.editor__heroOption {
+  @apply flex cursor-pointer items-start gap-3 rounded-md border border-border bg-surface p-3 text-sm text-text transition-colors duration-[var(--duration-fast)] ease-[var(--ease-out)] motion-reduce:transition-none;
+}
+
+.editor__heroOptionActive {
+  @apply border-accent-strong bg-accent-soft;
+}
+
+.editor__heroHint {
+  @apply mt-0.5 block text-xs text-text-muted;
+}
+
+.editor__addressDetails {
+  @apply rounded-md border border-border bg-surface;
+}
+
+.editor__addressSummary {
+  @apply cursor-pointer list-none px-3 py-2.5 text-sm font-medium text-text marker:content-none;
+}
+
+.editor__addressSummary::-webkit-details-marker {
+  display: none;
+}
+
+.editor__addressBody {
+  @apply flex flex-col gap-3 border-t border-border px-3 py-3;
+}
+
+.editor__addressHint {
+  @apply rounded-md border border-border bg-surface-sunken px-3 py-2 text-xs text-text-muted;
+}
+
+.editor__addressUrl {
+  @apply break-all font-medium text-text;
+}
+
+.editor__physicalAddress {
+  @apply text-sm text-text-muted;
+}
+
+.editor__alert {
+  @apply rounded-md border border-error-fg/20 bg-error-bg px-4 py-3 text-sm text-error-fg;
+}
+
+.editor__status {
+  @apply inline-flex items-center rounded-md border border-border bg-surface px-2.5 py-1 text-xs font-medium text-text-muted;
+}
+
+.editor__statusDirty {
+  @apply border-warning-fg/40 bg-warning-bg text-text;
+}
+
+.editor__statusSaving,
+.editor__statusPublishing {
+  @apply border-info-fg/30 bg-info-bg text-info-fg;
+}
+
+.editor__statusDraft {
+  @apply border-accent-strong/40 bg-accent-soft text-accent-strong;
+}
+
+.editor__statusPublished {
+  @apply border-success-fg/30 bg-success-bg text-success-fg;
+}
+
+.editor__statusError {
+  @apply border-error-fg/30 bg-error-bg text-error-fg;
+}
+
+.editor__mobileToggle {
+  @apply flex shrink-0 gap-1 rounded-md border border-border bg-surface-sunken p-0.5 xl:hidden;
+}
+
+.editor__mobileChip {
+  @apply min-h-[var(--touch-min)] flex-1 rounded-sm px-3 text-sm font-medium text-text-muted;
+}
+
+.editor__mobileChipActive {
+  @apply bg-surface font-semibold text-text shadow-card;
+}
+
+.editor__paneHiddenMobile {
+  @apply max-xl:hidden;
+}
+
+.editor__paneVisibleMobile {
+  @apply max-xl:flex;
+}
+
+.editor__preview {
+  @apply flex min-h-0 min-w-0 flex-col gap-3 max-xl:min-h-[28rem];
+}
+
+.editor__previewHead {
+  @apply flex shrink-0 flex-wrap items-center justify-between gap-2;
+}
+
+.editor__previewTitle {
+  @apply text-sm font-semibold text-text;
+}
+
+.editor__previewTools {
+  @apply flex flex-wrap items-center gap-2;
+}
+
+.editor__deviceToggle {
+  @apply flex gap-1 rounded-md border border-border bg-surface-sunken p-0.5;
+}
+
+.editor__deviceChip {
+  @apply rounded-sm px-2.5 py-1 text-xs font-medium text-text-muted transition-colors duration-[var(--duration-fast)] ease-[var(--ease-out)] motion-reduce:transition-none;
+}
+
+.editor__deviceChipActive {
+  @apply bg-surface font-semibold text-text shadow-card;
+}
+
+.editor__anchors {
+  @apply flex flex-wrap gap-1;
+}
+
+.editor__anchor {
+  @apply rounded-sm px-2 py-1 text-xs font-medium text-text-muted hover:bg-surface-sunken hover:text-text;
+}
+
+.editor__anchorActive {
+  @apply bg-accent-soft font-semibold text-accent-strong;
+}
+
+.editor__pickToggle {
+  @apply rounded-sm px-2 py-1 text-xs font-medium text-text-muted hover:bg-surface-sunken hover:text-text;
+}
+
+.editor__pickToggleActive {
+  @apply bg-accent-soft font-semibold text-accent-strong;
+}
+
+.editor__previewScroll {
+  @apply min-h-0 flex-1 overflow-y-auto rounded-md border border-border bg-bg;
+  scrollbar-gutter: stable;
+}
+
+.editor__previewFrame {
+  @apply mx-auto w-full origin-top transition-[max-width,transform] duration-[var(--duration-normal)] ease-[var(--ease-out)] motion-reduce:transition-none;
+}
+
+.editor__previewFrameDesktop {
+  @apply max-w-none;
+}
+
+.editor__previewFrameTablet {
+  /* Largura lógica ~768px; escala se a área for menor */
+  width: 48rem;
+  max-width: 100%;
+}
+
+.editor__previewFrameMobile {
+  @apply flex justify-center p-4;
+}
+
+.editor__previewSurface {
+  @apply relative min-h-[12rem] bg-bg;
+}
+
+.editor__previewSurfacePick {
+  @apply cursor-crosshair;
+}
+
+.editor__hotspot {
+  @apply absolute z-[2] rounded-sm border border-transparent transition-[border-color,background-color] duration-[var(--duration-fast)];
+}
+
+.editor__previewSurfacePick .editor__hotspot {
+  @apply border-dashed border-accent-strong/50 bg-accent-soft/20 hover:border-accent-strong hover:bg-accent-soft/40;
+}
+
+.editor__hotspotName {
+  inset: auto auto 38% 5%;
+  width: min(28rem, 70%);
+  height: 3.5rem;
+}
+
+.editor__hotspotCover {
+  inset: 0 0 35% 0;
+}
+
+.editor__aboutPickBar {
+  @apply absolute inset-x-0 top-0 z-[2] flex flex-wrap gap-2 p-3;
+}
+
+.editor__previewHint {
+  @apply shrink-0 text-xs text-text-subtle;
+}
+
+.editor__catalogStub {
+  @apply border-t border-border px-4 py-10 text-center text-sm text-text-muted;
+}
+
+.editor__footer {
+  @apply flex shrink-0 flex-wrap items-center gap-2 border-t border-border bg-bg pt-3;
+  padding-bottom: max(0.25rem, env(safe-area-inset-bottom, 0px));
+}
+
+.editor__footerStatus {
+  @apply mr-auto;
+}
+
+.editor__coverFocusInline {
+  @apply mt-2;
+}

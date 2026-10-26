@@ -1,0 +1,30 @@
+---
+description: Design system — tokens, direção visual e reuso de componentes UI
+globs: src/shared/components/**/*.{ts,tsx,css},src/app/**/*.{ts,tsx,css},src/styles/**/*.css,src/features/**/*.{ts,tsx,css}
+alwaysApply: false
+---
+
+# Design system (UI)
+
+Documentação: `docs/design-system.md`. Referências: `docs/design-references/`. Showcase: `/design-system`.
+
+## Obrigatório
+
+- **Reutilizar** tokens (`src/styles/theme/_tokens.css`) e componentes em `@components/ui`, `@components/layout`, `@components/marketplace`, `@components/dashboard`.
+- **Sem** hex, px mágico ou sombra solta fora dos tokens. Sem inline styles.
+- **Um acento** laranja-avermelhado + neutros quentes + preto. Nada de roxo/azul, glow, gradiente de texto ou gradientes decorativos coloridos.
+- Contexto escuro: `data-theme="dark"` na seção (`Section` / atributo), **não** duplicar componentes.
+- Glassmorphism **somente** em `SearchPanel` (hero).
+- Tipografia: Hanken Grotesk (variável `--font-hanken-grotesk`). Não usar Inter/Geist como fonte principal.
+- Botão primário / texto laranja pequeno: `accent-button` ou `accent-strong` (AA). `accent` vivo só em superfícies decorativas.
+- CSS Modules com `@apply`: primeiro linha `@reference` apontando para `src/styles/index.css` (Tailwind v4).
+- Primitivos em `ui/` = Tailwind/CVA (sem BEM module). Compostos = BEM + `styles.module.css` (ver `docs/project-standards-nextjs.md`).
+- Marca: só via `@config/brand`. Idioma UI: pt-BR. Moeda: `formatCurrency` (`@utils/format`).
+
+## Assinaturas a reutilizar
+
+Eyebrow `//`, Heading duas tonalidades, pills com seta, Bento, BigWordmark, histograma em RangeSlider, FilterCard com “Limpar”, VehicleCard (`grid` | `listing` | `featured`).
+
+## Proibido (cara de IA)
+
+Cards todos iguais, badges “Novo!” em excesso, Inter default, sombras pesadas, borda+sombra+gradiente no mesmo componente, shadcn “cru” sem tokens do projeto.

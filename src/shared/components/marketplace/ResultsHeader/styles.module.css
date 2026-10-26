@@ -1,0 +1,21 @@
+@reference "../../../../styles/index.css";
+
+.resultsHeader {
+  @apply flex flex-col gap-6;
+}
+
+.resultsHeader__top {
+  @apply flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between;
+}
+
+.resultsHeader__titleRow {
+  @apply flex flex-wrap items-center gap-3;
+}
+
+.resultsHeader__title {
+  @apply text-2xl font-normal text-text;
+}
+
+.resultsHeader__sort {
+  @apply w-full sm:max-w-xs;
+}

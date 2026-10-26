@@ -1,0 +1,21 @@
+@reference "../../../../styles/index.css";
+
+.logo {
+  @apply inline-flex items-baseline font-bold tracking-tight text-text;
+}
+
+.logo--sm {
+  @apply text-lg;
+}
+
+.logo--md {
+  @apply text-xl;
+}
+
+.logo--lg {
+  @apply text-2xl;
+}
+
+.logo__accent {
+  @apply text-accent-strong;
+}

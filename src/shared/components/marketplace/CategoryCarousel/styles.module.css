@@ -1,0 +1,22 @@
+@reference "../../../../styles/index.css";
+
+.categoryCarousel {
+  @apply flex flex-col gap-4;
+}
+
+.categoryCarousel__header {
+  @apply flex items-center justify-between gap-4;
+}
+
+.categoryCarousel__title {
+  @apply text-xl font-semibold text-text;
+}
+
+.categoryCarousel__track {
+  @apply flex gap-4 overflow-x-auto scroll-smooth pb-2;
+  scrollbar-width: thin;
+}
+
+.categoryCarousel__card {
+  @apply shrink-0;
+}

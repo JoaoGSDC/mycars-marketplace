@@ -1,0 +1,45 @@
+@reference "../../styles/index.css";
+
+.reservations {
+  @apply flex flex-col gap-6;
+}
+
+.reservations__meta {
+  @apply text-xs text-text-muted;
+}
+
+.reservations__overdue {
+  @apply text-xs font-medium text-error-fg;
+}
+
+.reservations__form {
+  @apply grid max-w-xl gap-4 rounded-md border border-border bg-surface p-4;
+}
+
+.reservations__formFields {
+  @apply grid gap-4;
+}
+
+.reservations__formActions {
+  @apply flex flex-wrap gap-2;
+}
+
+.reservations__panel {
+  @apply flex flex-col gap-4 rounded-md border border-border bg-surface p-4;
+}
+
+.reservations__panelTitle {
+  @apply text-sm font-semibold text-text;
+}
+
+.reservations__detail {
+  @apply grid gap-6 lg:grid-cols-[1fr_300px];
+}
+
+.reservations__activity {
+  @apply border-b border-border pb-3 last:border-b-0 last:pb-0;
+}
+
+.reservations__alert {
+  @apply rounded-md border border-warning-fg/30 bg-warning-bg px-3 py-2 text-sm text-text;
+}

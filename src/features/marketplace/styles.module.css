@@ -1,0 +1,130 @@
+@reference "../../styles/index.css";
+
+.marketplaceShell {
+  @apply flex min-h-full flex-1 flex-col;
+}
+
+.marketplaceSearch {
+  @apply flex flex-1 flex-col gap-3 px-6 py-12;
+}
+
+.marketplaceSearch__title {
+  @apply text-xl font-semibold text-text;
+}
+
+.marketplaceSearch__description {
+  @apply text-text-muted;
+}
+
+.marketplaceHome {
+  @apply flex flex-1 flex-col bg-bg text-text;
+}
+
+.marketplaceHome__skip {
+  @apply sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[var(--z-max)] focus:rounded-md focus:bg-surface focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-text focus:ring-2 focus:ring-accent-strong;
+}
+
+.marketplaceHome__heroShell {
+  @apply w-full;
+}
+
+.marketplaceHome__hero {
+  @apply relative flex min-h-[100dvh] flex-col overflow-hidden rounded-none bg-ink text-inverse;
+}
+
+.marketplaceHome__heroMedia {
+  @apply absolute inset-0;
+}
+
+.marketplaceHome__heroImage {
+  @apply object-cover;
+}
+
+.marketplaceHome__heroPlaceholder {
+  @apply h-full rounded-none;
+}
+
+.marketplaceHome__heroOverlay {
+  @apply absolute inset-0 bg-ink/60;
+}
+
+.marketplaceHome__heroContent {
+  @apply relative z-[var(--z-base)] flex flex-1 flex-col gap-8 px-[var(--container-pad)] pb-8 md:pb-10;
+  padding-top: calc(7rem + env(safe-area-inset-top, 0px));
+}
+
+.marketplaceHome__heroCopy {
+  @apply flex max-w-2xl flex-1 flex-col justify-center;
+}
+
+.marketplaceHome__title {
+  @apply mt-3 text-[length:var(--text-h1)] font-black leading-[var(--leading-display)] tracking-tight text-inverse;
+}
+
+.marketplaceHome__titleLine {
+  @apply inline;
+}
+
+.marketplaceHome__subtitle {
+  @apply mt-4 max-w-xl text-base text-white/80 md:text-lg;
+}
+
+.marketplaceHome__search {
+  @apply w-full shrink-0;
+}
+
+.marketplaceHome__section {
+  @apply w-full px-[var(--container-pad)] py-[var(--section-pad-y)];
+}
+
+.marketplaceHome__introHeader {
+  @apply mb-14 md:mb-16;
+}
+
+.marketplaceHome__sectionCompact {
+  @apply w-full px-[var(--container-pad)] py-[var(--space-16)];
+}
+
+.marketplaceHome__bentoMedia {
+  @apply relative h-full min-h-[180px] overflow-hidden rounded-xl;
+}
+
+.marketplaceHome__bentoPhoto {
+  @apply object-cover;
+}
+
+.marketplaceHome__bentoMediaInner {
+  @apply h-full rounded-xl;
+}
+
+.marketplaceHome__categoryHeader {
+  @apply mb-8;
+}
+
+.marketplaceHome__how {
+  @apply mx-auto grid w-full max-w-[var(--container-max)] gap-12 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center lg:gap-16;
+}
+
+.marketplaceHome__howCopy {
+  @apply flex flex-col gap-6;
+}
+
+.marketplaceHome__howAction {
+  @apply w-fit max-w-full !text-white;
+}
+
+.marketplaceHome__howFeatures {
+  @apply flex flex-col gap-5;
+}
+
+.marketplaceHome__device {
+  @apply mx-auto max-w-xs lg:mx-0;
+}
+
+.marketplaceHome__deviceScreen {
+  @apply flex flex-col gap-3 p-3;
+}
+
+.marketplaceHome__jsonLd {
+  @apply hidden;
+}
