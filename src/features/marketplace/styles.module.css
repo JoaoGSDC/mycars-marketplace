@@ -25,15 +25,16 @@
 }
 
 .marketplaceHome__heroShell {
-  @apply w-full;
+  /* Acima da section seguinte para o autocomplete do Buscar não ficar por baixo. */
+  @apply relative z-[1] w-full;
 }
 
 .marketplaceHome__hero {
-  @apply relative flex min-h-[100dvh] flex-col overflow-hidden rounded-none bg-ink text-inverse;
+  @apply relative flex min-h-[100dvh] flex-col rounded-none bg-ink text-inverse;
 }
 
 .marketplaceHome__heroMedia {
-  @apply absolute inset-0;
+  @apply absolute inset-0 overflow-hidden;
 }
 
 .marketplaceHome__heroImage {
@@ -70,7 +71,7 @@
 }
 
 .marketplaceHome__search {
-  @apply w-full shrink-0;
+  @apply relative z-[var(--z-dropdown)] w-full shrink-0;
 }
 
 .marketplaceHome__section {

@@ -133,7 +133,8 @@
 }
 
 .listing__grid > .listing__gridItem {
-  @apply max-w-md;
+  /* Preenche a célula do grid — evita vão horizontal maior que o gap das linhas. */
+  @apply w-full max-w-none;
 }
 
 .listing__list {
