@@ -23,17 +23,11 @@ function resolveBaseURL(): string {
   return process.env.BETTER_AUTH_URL ?? process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000';
 }
 
-function resolveDatabaseUrl(): string {
-  return process.env.TURSO_DATABASE_URL ?? 'file:./.data/local.db';
-}
-
 /**
  * Better Auth — sessões, senhas e recuperação.
  * Papéis de loja ficam em `store_memberships` (não no token do client).
+ * Banco: `USE_LOCAL_DB` + `resolveDatabaseCredentials` via `getDb()`.
  */
-if (!process.env.TURSO_DATABASE_URL) {
-  process.env.TURSO_DATABASE_URL = resolveDatabaseUrl();
-}
 
 export const auth = betterAuth({
   appName: 'MyCars',

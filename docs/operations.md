@@ -6,9 +6,9 @@ Guia operacional para configuração, desenvolvimento, testes, deploy, migration
 
 | Ambiente | Banco | Mídia | Auth URL | Seed |
 | -------- | ----- | ----- | -------- | ---- |
-| Local | `file:./.data/local.db` | `MEDIA_STORAGE_DRIVER=local` | `http://localhost:3000` | permitido com `ALLOW_DB_SEED=true` |
-| Staging | Turso dedicado | R2 bucket staging | URL staging | **desligado** |
-| Production | Turso prod | R2 prod | URL canônica HTTPS | **nunca** |
+| Local | `USE_LOCAL_DB=true` + SQLite em `.data/local.db` | `MEDIA_STORAGE_DRIVER=local` | `http://localhost:3000` | permitido com `ALLOW_DB_SEED=true` |
+| Staging | `USE_LOCAL_DB=false` + Turso dedicado | R2 bucket staging | URL staging | **desligado** |
+| Production | `USE_LOCAL_DB=false` + Turso prod | R2 prod | URL canônica HTTPS | **nunca** |
 
 Regra: credenciais e secrets **nunca** no cliente (`NEXT_PUBLIC_*` só para origem pública).
 
@@ -18,7 +18,9 @@ Ver `.env.example`. Obrigatórias em produção:
 
 | Variável | Uso |
 | -------- | --- |
-| `TURSO_DATABASE_URL` | libSQL remoto |
+| `USE_LOCAL_DB` | `true` = SQLite local; `false` = Turso |
+| `LOCAL_DATABASE_URL` | arquivo local (default `file:./.data/local.db`) |
+| `TURSO_DATABASE_URL` | libSQL remoto (quando `USE_LOCAL_DB=false`) |
 | `TURSO_AUTH_TOKEN` | token Turso |
 | `BETTER_AUTH_SECRET` | ≥ 32 bytes aleatórios (`openssl rand -base64 32`) |
 | `BETTER_AUTH_URL` | origem canônica da app |

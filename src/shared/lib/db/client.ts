@@ -1,6 +1,7 @@
 import { createClient, type Client } from '@libsql/client';
 import { drizzle, type LibSQLDatabase } from 'drizzle-orm/libsql';
 
+import { resolveDatabaseCredentials } from './resolve-database-url';
 import * as schema from './schema';
 
 export type AppDatabase = LibSQLDatabase<typeof schema>;
@@ -8,30 +9,17 @@ export type AppDatabase = LibSQLDatabase<typeof schema>;
 let client: Client | null = null;
 let db: AppDatabase | null = null;
 
-function resolveDatabaseUrl(): string {
-  const url = process.env.TURSO_DATABASE_URL;
-
-  if (!url) {
-    throw new Error(
-      'TURSO_DATABASE_URL não definida. Copie `.env.example` para `.env.local` (ex.: file:./.data/local.db).'
-    );
-  }
-
-  return url;
-}
-
 /** Cliente libSQL singleton (server-only). */
 export function getDbClient(): Client {
   if (client) {
     return client;
   }
 
-  const url = resolveDatabaseUrl();
-  const authToken = process.env.TURSO_AUTH_TOKEN;
+  const { url, authToken } = resolveDatabaseCredentials();
 
   client = createClient({
     url,
-    authToken: authToken || undefined,
+    authToken,
   });
 
   return client;

@@ -8,7 +8,6 @@ import {
   BrandCard,
   CTABanner,
   ImageOverlayCard,
-  SearchPanel,
   StatCard,
   VehicleCard,
 } from '@components/marketplace';
@@ -16,13 +15,17 @@ import { Button, DeviceFrame, Eyebrow, FeatureItem, Heading, ImagePlaceholder, S
 import { brand } from '@config/brand';
 import { services } from '@services';
 import { formatCount } from '@utils/format';
-import { buildVehicleSearchHref } from '@utils/vehicle-search-params';
+import {
+  buildVehicleSearchHref,
+  createEmptyVehicleSearchParams,
+} from '@utils/vehicle-search-params';
 
 import { HomeCategories } from './components/HomeCategories';
 import { HomeLatestListings } from './components/HomeLatestListings';
 import { HomeNewsletter } from './components/HomeNewsletter';
 import { HomeStickyHeader } from './components/HomeStickyHeader';
 import { HomeStoresShowcase } from './components/HomeStoresShowcase';
+import { MarketplaceHomeSearch } from './components/MarketplaceHomeSearch';
 import { BODY_TYPE_IMAGES, VEHICLE_IMAGE_POOL } from '@fixtures/vehicle-images';
 
 import { resolveHeroImageSrc } from './lib/hero-image';
@@ -37,22 +40,17 @@ export async function MarketplaceHomeView() {
   const copy = homeContent;
   const heroSrc = await resolveHeroImageSrc();
 
-  const [catalog, categories, stores, stats, latestAll, latestNew, latestSeminew, latestUsed] = await Promise.all([
-    services.catalog.getCatalog(),
-    services.catalog.getCategoryCountsWithSearch(),
-    services.catalog.getVerifiedStores(),
-    services.catalog.getMarketStats(),
-    services.catalog.getLatestVehicles('all', 6),
-    services.catalog.getLatestVehicles('novo', 6),
-    services.catalog.getLatestVehicles('seminovo', 6),
-    services.catalog.getLatestVehicles('usado', 6),
-  ]);
-
-  const searchCatalog = catalog.map((make) => ({
-    slug: make.slug,
-    name: make.name,
-    models: make.models.map((model) => ({ value: model.slug, label: model.name })),
-  }));
+  const [categories, stores, stats, latestAll, latestNew, latestSeminew, latestUsed, searchBootstrap] =
+    await Promise.all([
+      services.catalog.getCategoryCountsWithSearch(),
+      services.catalog.getVerifiedStores(),
+      services.catalog.getMarketStats(),
+      services.catalog.getLatestVehicles('all', 6),
+      services.catalog.getLatestVehicles('novo', 6),
+      services.catalog.getLatestVehicles('seminovo', 6),
+      services.catalog.getLatestVehicles('usado', 6),
+      services.vehicleSearch.searchVehicles(createEmptyVehicleSearchParams()),
+    ]);
 
   const categoryItemsTyped = categories.map((item) => ({
     id: item.body,
@@ -129,7 +127,10 @@ export async function MarketplaceHomeView() {
               </h1>
               <p className={styles.marketplaceHome__subtitle}>{copy.hero.subtitle}</p>
             </div>
-            <SearchPanel catalog={searchCatalog} className={styles.marketplaceHome__search} />
+            <MarketplaceHomeSearch
+              facets={searchBootstrap.facets}
+              className={styles.marketplaceHome__search}
+            />
           </div>
         </section>
       </div>
